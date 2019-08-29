@@ -3,6 +3,7 @@
   <viewpoint:DAnalysis uid="_qtpdQMosEemTpvCIBWhSmg" selectedViews="_rYMPEMosEemTpvCIBWhSmg" version="14.1.0.201810161215">
     <semanticResources>universityStudies.ecore</semanticResources>
     <semanticResources>universityStudies.genmodel</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_rYMPEMosEemTpvCIBWhSmg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_reo1UMosEemTpvCIBWhSmg" name="universityStudies" repPath="#_raacoMosEemTpvCIBWhSmg">
