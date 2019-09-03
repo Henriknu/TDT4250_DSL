@@ -145,7 +145,74 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSemester(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(semester, diagnostics, context);
+		if (!validate_NoCircularContainment(semester, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_isValidSeason(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_CourseNotNull(semester, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the isValidSeason constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_isValidSeason(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "isValidSeason", getObjectLabel(semester, context) },
+						 new Object[] { semester },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Validates the CourseNotNull constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_CourseNotNull(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "CourseNotNull", getObjectLabel(semester, context) },
+						 new Object[] { semester },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
