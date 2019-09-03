@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import universityStudies.Course;
@@ -17,6 +18,7 @@ import universityStudies.Specialization;
 import universityStudies.StudyPlan;
 import universityStudies.UniversityStudiesFactory;
 import universityStudies.UniversityStudiesPackage;
+import universityStudies.util.UniversityStudiesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +121,15 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 
 		// Initialize created meta-data
 		theUniversityStudiesPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theUniversityStudiesPackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return UniversityStudiesValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theUniversityStudiesPackage.freeze();
@@ -586,6 +597,26 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (resultEClass,
+		   source,
+		   new String[] {
+			   "constraints", "isValidGrade semesterNotNull courseNotNull studyplanNotNull validDate"
+		   });
 	}
 
 } //UniversityStudiesPackageImpl

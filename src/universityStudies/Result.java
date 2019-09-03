@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getResult()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='isValidGrade semesterNotNull courseNotNull studyplanNotNull validDate'"
  * @generated
  */
 public interface Result extends EObject {
