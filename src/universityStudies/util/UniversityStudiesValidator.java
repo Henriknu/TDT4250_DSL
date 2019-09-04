@@ -163,14 +163,14 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * Validates the isValidSeason constraint of '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @NOT generated
 	 */
 	public boolean validateSemester_isValidSeason(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (semester.getSeason() != "Summer" || semester.getSeason() != "Spring" || semester.getSeason() != "Autumn") {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -178,7 +178,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "isValidSeason", getObjectLabel(semester, context) },
+						 new Object[] { "Invalid semester input, it can only be Summer, Spring or Autumn", getObjectLabel(semester, context) },
 						 new Object[] { semester },
 						 context));
 			}
@@ -191,14 +191,14 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * Validates the CourseNotNull constraint of '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @Not generated
 	 */
 	public boolean validateSemester_CourseNotNull(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (semester.getCourses() == null) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -206,7 +206,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "CourseNotNull", getObjectLabel(semester, context) },
+						 new Object[] { "Enter in a course", getObjectLabel(semester, context) },
 						 new Object[] { semester },
 						 context));
 			}
@@ -249,7 +249,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (!isValidGrade(result.getGrade())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -257,7 +257,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "isValidGrade", getObjectLabel(result, context) },
+						 new Object[] { "Invalid grade needs to be between A and F capital letters", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}
@@ -265,19 +265,33 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		}
 		return true;
 	}
+	
+	private boolean isValidGrade(char c) {
+		
+		char[] values = {'A', 'B', 'C', 'D', 'E', 'F'};
+		
+		for(int i = 0; i>values.length; i++) {
+			if(c == values[i]) {
+				return true;
+			}
+		}
+		
+		
+		return false;
+	}
 
 	/**
 	 * Validates the semesterNotNull constraint of '<em>Result</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @Not generated
 	 */
 	public boolean validateResult_semesterNotNull(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (result.getSemester() == null) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -285,7 +299,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "semesterNotNull", getObjectLabel(result, context) },
+						 new Object[] { "Enter a value to semester", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}
@@ -305,7 +319,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (result.getCourse() == null) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -313,7 +327,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "courseNotNull", getObjectLabel(result, context) },
+						 new Object[] { "course has to be entered", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}
@@ -333,7 +347,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (result.getStudyplan() == null) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -341,7 +355,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "studyplanNotNull", getObjectLabel(result, context) },
+						 new Object[] { "studyplan has to be entered", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}
