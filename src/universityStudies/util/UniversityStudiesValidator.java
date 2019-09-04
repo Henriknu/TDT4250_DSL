@@ -109,7 +109,74 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCourse(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(course, diagnostics, context);
+		if (!validate_NoCircularContainment(course, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourse_ValidCode(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourse_Validcredits(course, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the ValidCode constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourse_ValidCode(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ValidCode", getObjectLabel(course, context) },
+						 new Object[] { course },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Validates the Validcredits constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourse_Validcredits(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "Validcredits", getObjectLabel(course, context) },
+						 new Object[] { course },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -118,7 +185,45 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProgramme(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programme, diagnostics, context);
+		if (!validate_NoCircularContainment(programme, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_ValidYears(programme, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the ValidYears constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgramme_ValidYears(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ValidYears", getObjectLabel(programme, context) },
+						 new Object[] { programme },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -249,7 +354,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (!isValidGrade(result.getGrade())) {
+		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -257,7 +362,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "Invalid grade needs to be between A and F capital letters", getObjectLabel(result, context) },
+						 new Object[] { "isValidGrade", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}
@@ -319,7 +424,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (result.getCourse() == null) {
+		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -327,7 +432,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "course has to be entered", getObjectLabel(result, context) },
+						 new Object[] { "courseNotNull", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}
@@ -347,7 +452,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (result.getStudyplan() == null) {
+		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -355,7 +460,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "studyplan has to be entered", getObjectLabel(result, context) },
+						 new Object[] { "studyplanNotNull", getObjectLabel(result, context) },
 						 new Object[] { result },
 						 context));
 			}

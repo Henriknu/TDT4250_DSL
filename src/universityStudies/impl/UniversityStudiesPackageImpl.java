@@ -612,6 +612,18 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
+		  (courseEClass,
+		   source,
+		   new String[] {
+			   "constraints", "ValidCode Validcredits"
+		   });
+		addAnnotation
+		  (programmeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "ValidYears"
+		   });
+		addAnnotation
 		  (semesterEClass,
 		   source,
 		   new String[] {

@@ -3,6 +3,9 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="universityStudies" nsURI="http://www.example.org/universityStudies"
     nsPrefix="universityStudies">
   <eClassifiers xsi:type="ecore:EClass" name="Course">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ValidCode Validcredits"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" lowerBound="5"
@@ -13,6 +16,9 @@
         eType="#//Programme" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ValidYears"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="years" lowerBound="1" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

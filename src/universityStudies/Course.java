@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getCourse()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidCode Validcredits'"
  * @generated
  */
 public interface Course extends EObject {
