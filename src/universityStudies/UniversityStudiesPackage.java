@@ -94,7 +94,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	int COURSE__CREDITS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute list.
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -530,10 +530,10 @@ public interface UniversityStudiesPackage extends EPackage {
 	EAttribute getCourse_Credits();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link universityStudies.Course#getLevel <em>Level</em>}'.
+	 * Returns the meta object for the attribute '{@link universityStudies.Course#getLevel <em>Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Level</em>'.
+	 * @return the meta object for the attribute '<em>Level</em>'.
 	 * @see universityStudies.Course#getLevel()
 	 * @see #getCourse()
 	 * @generated
@@ -923,7 +923,7 @@ public interface UniversityStudiesPackage extends EPackage {
 		EAttribute COURSE__CREDITS = eINSTANCE.getCourse_Credits();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

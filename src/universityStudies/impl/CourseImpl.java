@@ -92,14 +92,24 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	protected EList<Float> credits;
 
 	/**
-	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute list.
+	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLevel()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> level;
+	protected static final int LEVEL_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected int level = LEVEL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getProgrammes() <em>Programmes</em>}' containment reference list.
@@ -189,11 +199,20 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getLevel() {
-		if (level == null) {
-			level = new EDataTypeUniqueEList<Integer>(Integer.class, this, UniversityStudiesPackage.COURSE__LEVEL);
-		}
+	public int getLevel() {
 		return level;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLevel(int newLevel) {
+		int oldLevel = level;
+		level = newLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.COURSE__LEVEL, oldLevel, level));
 	}
 
 	/**
@@ -264,8 +283,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				getCredits().addAll((Collection<? extends Float>)newValue);
 				return;
 			case UniversityStudiesPackage.COURSE__LEVEL:
-				getLevel().clear();
-				getLevel().addAll((Collection<? extends Integer>)newValue);
+				setLevel((Integer)newValue);
 				return;
 			case UniversityStudiesPackage.COURSE__PROGRAMMES:
 				getProgrammes().clear();
@@ -293,7 +311,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				getCredits().clear();
 				return;
 			case UniversityStudiesPackage.COURSE__LEVEL:
-				getLevel().clear();
+				setLevel(LEVEL_EDEFAULT);
 				return;
 			case UniversityStudiesPackage.COURSE__PROGRAMMES:
 				getProgrammes().clear();
@@ -317,7 +335,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case UniversityStudiesPackage.COURSE__CREDITS:
 				return credits != null && !credits.isEmpty();
 			case UniversityStudiesPackage.COURSE__LEVEL:
-				return level != null && !level.isEmpty();
+				return level != LEVEL_EDEFAULT;
 			case UniversityStudiesPackage.COURSE__PROGRAMMES:
 				return programmes != null && !programmes.isEmpty();
 		}

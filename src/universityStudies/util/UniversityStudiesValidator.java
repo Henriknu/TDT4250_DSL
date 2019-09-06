@@ -2,6 +2,7 @@
  */
 package universityStudies.util;
 
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -134,8 +135,6 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		
-		// TODO LOOK AT THIS ONE TOO !!!!
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
@@ -165,7 +164,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
 		//TODO WTF IS THIS ELIST BS LOOK AT IT TOMORROW !!!! RRREEERERE
-		if (!ValidCredits(course.getCredits())) {
+		if (ValidCredits(course.getCredits())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -182,14 +181,13 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		return true;
 	}
 	
-	private boolean  ValidCredits(float value) {
-		for(int i = 1; i>8 ; i++) {
-		if(value == 5*i || value = 7.5*i) {
+	private boolean  ValidCredits(List<Float> value) {
+		for(int i = 1; i>value.size() ; i++) {
+		if(value.get(i)%5 == 0 || value.get(i)%7.5 == 0) {
 			return true;
 		}
 		}
-		return false;
-			
+		return false;		
 	}
 
 	/**
@@ -225,7 +223,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		
 		//TODO   ASK WTF IS GOING ON HERE
 		
-		if (!ValidYears(programme.getYears())) {
+		if (ValidYears(programme.getYears())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -242,8 +240,9 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		return true;
 	}
 	
-	private boolean ValidYears(int years) {
-		if(years == 1 || years == 3 || years == 5) {
+	private boolean ValidYears(List<Integer> years) {
+		if(years.contains(1) || years.contains(3) || years.contains(5)){
+		
 			return true;
 		}
 		return false;

@@ -84,16 +84,26 @@ public interface Course extends EObject {
 	EList<Float> getCredits();
 
 	/**
-	 * Returns the value of the '<em><b>Level</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Level</em>' attribute list.
+	 * @return the value of the '<em>Level</em>' attribute.
+	 * @see #setLevel(int)
 	 * @see universityStudies.UniversityStudiesPackage#getCourse_Level()
-	 * @model required="true" upper="4"
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getLevel();
+	int getLevel();
+
+	/**
+	 * Sets the value of the '{@link universityStudies.Course#getLevel <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Level</em>' attribute.
+	 * @see #getLevel()
+	 * @generated
+	 */
+	void setLevel(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Programmes</b></em>' containment reference list.
