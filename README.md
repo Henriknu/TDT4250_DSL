@@ -1,9 +1,12 @@
 # TDT4250_Modeling
 
+This repository is for assignment 1 in the NTNU course TDT4250 Advanced software design.
 
-##Structure
+Group: Hallvard Echtermeyer, Henrik Knudsen
 
-###Model
+## Structure
+
+### Model
 
 --> UniversityStudies.ecore:
 
@@ -24,5 +27,15 @@
   
   - Concrete implementations of the interfaces in the src folder.
 
-##Content
+## Content
+
+--> Studyplan
+
+  - Represents what is shown to a student when visiting studentWeb. Includes a Programme, potential specializations, semesters and results from exams.
+  
+--> Programme
+
+  - Represents a study programme, ex. MTDT. Incudes a set of allowed courses and potential specializations. The programme also has a name, a type (2 year master, 5 year master, bachelor, one-year-study etc) and a year field, signifying what the expected duration of the programme will be.
+  
+  
 
