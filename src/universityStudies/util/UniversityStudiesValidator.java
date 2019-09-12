@@ -4,6 +4,7 @@ package universityStudies.util;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -361,7 +362,11 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		var ordinal = new Object(){float value;};
+		semester.getCourses().stream().forEach((course)->{
+			ordinal.value+= course.getCredits();
+		});
+		if (30 < ordinal.value) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
