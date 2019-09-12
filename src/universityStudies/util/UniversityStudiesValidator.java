@@ -163,8 +163,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		//TODO WTF IS THIS ELIST BS LOOK AT IT TOMORROW !!!! RRREEERERE
-		if (ValidCredits(course.getCredits())) {
+		if (validCredits(course.getCredits())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -181,13 +180,14 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		return true;
 	}
 	
-	private boolean  ValidCredits(List<Float> value) {
-		for(int i = 1; i>value.size() ; i++) {
-		if(value.get(i)%5 == 0 || value.get(i)%7.5 == 0) {
-			return true;
+	private boolean  validCredits(float value) {
+		float[] validValues = {5, 7.5f, 10, 15, 30, 60};
+		for (float validValue: validValues) {
+			if(validValue == value) {
+				return true;
+			}
 		}
-		}
-		return false;		
+		return false;
 	}
 
 	/**
@@ -221,9 +221,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
 		
-		//TODO   ASK WTF IS GOING ON HERE
-		
-		if (ValidYears(programme.getYears())) {
+		if (validYears(programme.getYears())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -240,8 +238,8 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		return true;
 	}
 	
-	private boolean ValidYears(List<Integer> years) {
-		if(years.contains(1) || years.contains(3) || years.contains(5)){
+	private boolean validYears(int year) {
+		if(year == 1 || year == 3  || year == 5 ){
 		
 			return true;
 		}
@@ -363,9 +361,6 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		
-		
-		
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
@@ -381,17 +376,6 @@ public class UniversityStudiesValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
-	}
-	
-	private boolean EnoughPoints(Semester s) {
-		float value=0;
-		for(int i=0; i>s.getCourses().size(); i++) {
-			value += s.getCourses().get(i).getCredits();
-		}
-		if(value>30) {
-			return true;
-		}
-		return false;
 	}
 
 	/**
