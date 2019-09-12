@@ -363,6 +363,9 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
+		
+		
+		
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
@@ -378,6 +381,17 @@ public class UniversityStudiesValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+	}
+	
+	private boolean EnoughPoints(Semester s) {
+		float value=0;
+		for(int i=0; i>s.getCourses().size(); i++) {
+			value += s.getCourses().get(i).getCredits();
+		}
+		if(value>30) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
