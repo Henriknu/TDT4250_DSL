@@ -47,26 +47,16 @@ public interface Specialization extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Further Specializations</b></em>' reference.
+	 * Returns the value of the '<em><b>Further Specializations</b></em>' reference list.
+	 * The list contents are of type {@link universityStudies.Specialization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Further Specializations</em>' reference.
-	 * @see #setFurtherSpecializations(Specialization)
+	 * @return the value of the '<em>Further Specializations</em>' reference list.
 	 * @see universityStudies.UniversityStudiesPackage#getSpecialization_FurtherSpecializations()
 	 * @model
 	 * @generated
 	 */
-	Specialization getFurtherSpecializations();
-
-	/**
-	 * Sets the value of the '{@link universityStudies.Specialization#getFurtherSpecializations <em>Further Specializations</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Further Specializations</em>' reference.
-	 * @see #getFurtherSpecializations()
-	 * @generated
-	 */
-	void setFurtherSpecializations(Specialization value);
+	EList<Specialization> getFurtherSpecializations();
 
 	/**
 	 * Returns the value of the '<em><b>Courses</b></em>' reference list.

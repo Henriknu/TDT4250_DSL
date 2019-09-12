@@ -9,12 +9,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import universityStudies.Course;
@@ -42,14 +38,24 @@ import universityStudies.UniversityStudiesPackage;
  */
 public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Programme {
 	/**
-	 * The cached value of the '{@link #getYears() <em>Years</em>}' attribute list.
+	 * The default value of the '{@link #getYears() <em>Years</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getYears()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> years;
+	protected static final int YEARS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getYears() <em>Years</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYears()
+	 * @generated
+	 * @ordered
+	 */
+	protected int years = YEARS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSemesters() <em>Semesters</em>}' attribute.
@@ -82,14 +88,14 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected EList<Course> courses;
 
 	/**
-	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' reference.
+	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSpecializations()
 	 * @generated
 	 * @ordered
 	 */
-	protected Specialization specializations;
+	protected EList<Specialization> specializations;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -155,11 +161,20 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getYears() {
-		if (years == null) {
-			years = new EDataTypeUniqueEList<Integer>(Integer.class, this, UniversityStudiesPackage.PROGRAMME__YEARS);
-		}
+	public int getYears() {
 		return years;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setYears(int newYears) {
+		int oldYears = years;
+		years = newYears;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.PROGRAMME__YEARS, oldYears, years));
 	}
 
 	/**
@@ -200,37 +215,11 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Specialization getSpecializations() {
-		if (specializations != null && specializations.eIsProxy()) {
-			InternalEObject oldSpecializations = (InternalEObject)specializations;
-			specializations = (Specialization)eResolveProxy(oldSpecializations);
-			if (specializations != oldSpecializations) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS, oldSpecializations, specializations));
-			}
+	public EList<Specialization> getSpecializations() {
+		if (specializations == null) {
+			specializations = new EObjectResolvingEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS);
 		}
 		return specializations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Specialization basicGetSpecializations() {
-		return specializations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSpecializations(Specialization newSpecializations) {
-		Specialization oldSpecializations = specializations;
-		specializations = newSpecializations;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS, oldSpecializations, specializations));
 	}
 
 	/**
@@ -290,8 +279,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case UniversityStudiesPackage.PROGRAMME__COURSES:
 				return getCourses();
 			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
-				if (resolve) return getSpecializations();
-				return basicGetSpecializations();
+				return getSpecializations();
 			case UniversityStudiesPackage.PROGRAMME__NAME:
 				return getName();
 			case UniversityStudiesPackage.PROGRAMME__TYPE:
@@ -310,8 +298,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
-				getYears().clear();
-				getYears().addAll((Collection<? extends Integer>)newValue);
+				setYears((Integer)newValue);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
 				setSemesters((Integer)newValue);
@@ -321,7 +308,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				getCourses().addAll((Collection<? extends Course>)newValue);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
-				setSpecializations((Specialization)newValue);
+				getSpecializations().clear();
+				getSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__NAME:
 				setName((String)newValue);
@@ -342,7 +330,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
-				getYears().clear();
+				setYears(YEARS_EDEFAULT);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
 				setSemesters(SEMESTERS_EDEFAULT);
@@ -351,7 +339,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				getCourses().clear();
 				return;
 			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
-				setSpecializations((Specialization)null);
+				getSpecializations().clear();
 				return;
 			case UniversityStudiesPackage.PROGRAMME__NAME:
 				setName(NAME_EDEFAULT);
@@ -372,13 +360,13 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
-				return years != null && !years.isEmpty();
+				return years != YEARS_EDEFAULT;
 			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
 				return semesters != SEMESTERS_EDEFAULT;
 			case UniversityStudiesPackage.PROGRAMME__COURSES:
 				return courses != null && !courses.isEmpty();
 			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
-				return specializations != null;
+				return specializations != null && !specializations.isEmpty();
 			case UniversityStudiesPackage.PROGRAMME__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UniversityStudiesPackage.PROGRAMME__TYPE:

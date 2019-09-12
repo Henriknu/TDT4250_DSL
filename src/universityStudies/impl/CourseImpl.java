@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -82,14 +80,24 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	protected String code = CODE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCredits() <em>Credits</em>}' attribute list.
+	 * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCredits()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Float> credits;
+	protected static final float CREDITS_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected float credits = CREDITS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
@@ -187,11 +195,20 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Float> getCredits() {
-		if (credits == null) {
-			credits = new EDataTypeUniqueEList<Float>(Float.class, this, UniversityStudiesPackage.COURSE__CREDITS);
-		}
+	public float getCredits() {
 		return credits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCredits(float newCredits) {
+		float oldCredits = credits;
+		credits = newCredits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.COURSE__CREDITS, oldCredits, credits));
 	}
 
 	/**
@@ -279,8 +296,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				setCode((String)newValue);
 				return;
 			case UniversityStudiesPackage.COURSE__CREDITS:
-				getCredits().clear();
-				getCredits().addAll((Collection<? extends Float>)newValue);
+				setCredits((Float)newValue);
 				return;
 			case UniversityStudiesPackage.COURSE__LEVEL:
 				setLevel((Integer)newValue);
@@ -308,7 +324,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				setCode(CODE_EDEFAULT);
 				return;
 			case UniversityStudiesPackage.COURSE__CREDITS:
-				getCredits().clear();
+				setCredits(CREDITS_EDEFAULT);
 				return;
 			case UniversityStudiesPackage.COURSE__LEVEL:
 				setLevel(LEVEL_EDEFAULT);
@@ -333,7 +349,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case UniversityStudiesPackage.COURSE__CODE:
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case UniversityStudiesPackage.COURSE__CREDITS:
-				return credits != null && !credits.isEmpty();
+				return credits != CREDITS_EDEFAULT;
 			case UniversityStudiesPackage.COURSE__LEVEL:
 				return level != LEVEL_EDEFAULT;
 			case UniversityStudiesPackage.COURSE__PROGRAMMES:

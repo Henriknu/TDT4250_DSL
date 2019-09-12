@@ -7,8 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -54,14 +52,14 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFurtherSpecializations() <em>Further Specializations</em>}' reference.
+	 * The cached value of the '{@link #getFurtherSpecializations() <em>Further Specializations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFurtherSpecializations()
 	 * @generated
 	 * @ordered
 	 */
-	protected Specialization furtherSpecializations;
+	protected EList<Specialization> furtherSpecializations;
 
 	/**
 	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
@@ -118,37 +116,11 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Specialization getFurtherSpecializations() {
-		if (furtherSpecializations != null && furtherSpecializations.eIsProxy()) {
-			InternalEObject oldFurtherSpecializations = (InternalEObject)furtherSpecializations;
-			furtherSpecializations = (Specialization)eResolveProxy(oldFurtherSpecializations);
-			if (furtherSpecializations != oldFurtherSpecializations) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS, oldFurtherSpecializations, furtherSpecializations));
-			}
+	public EList<Specialization> getFurtherSpecializations() {
+		if (furtherSpecializations == null) {
+			furtherSpecializations = new EObjectResolvingEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS);
 		}
 		return furtherSpecializations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Specialization basicGetFurtherSpecializations() {
-		return furtherSpecializations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFurtherSpecializations(Specialization newFurtherSpecializations) {
-		Specialization oldFurtherSpecializations = furtherSpecializations;
-		furtherSpecializations = newFurtherSpecializations;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS, oldFurtherSpecializations, furtherSpecializations));
 	}
 
 	/**
@@ -174,8 +146,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			case UniversityStudiesPackage.SPECIALIZATION__NAME:
 				return getName();
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
-				if (resolve) return getFurtherSpecializations();
-				return basicGetFurtherSpecializations();
+				return getFurtherSpecializations();
 			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
 				return getCourses();
 		}
@@ -195,7 +166,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				setName((String)newValue);
 				return;
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
-				setFurtherSpecializations((Specialization)newValue);
+				getFurtherSpecializations().clear();
+				getFurtherSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
 			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
 				getCourses().clear();
@@ -217,7 +189,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				setName(NAME_EDEFAULT);
 				return;
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
-				setFurtherSpecializations((Specialization)null);
+				getFurtherSpecializations().clear();
 				return;
 			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
 				getCourses().clear();
@@ -237,7 +209,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			case UniversityStudiesPackage.SPECIALIZATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
-				return furtherSpecializations != null;
+				return furtherSpecializations != null && !furtherSpecializations.isEmpty();
 			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
 				return courses != null && !courses.isEmpty();
 		}

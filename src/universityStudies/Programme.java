@@ -29,16 +29,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Programme extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Years</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Years</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Years</em>' attribute list.
+	 * @return the value of the '<em>Years</em>' attribute.
+	 * @see #setYears(int)
 	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Years()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getYears();
+	int getYears();
+
+	/**
+	 * Sets the value of the '{@link universityStudies.Programme#getYears <em>Years</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Years</em>' attribute.
+	 * @see #getYears()
+	 * @generated
+	 */
+	void setYears(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Semesters</b></em>' attribute.
@@ -75,26 +85,16 @@ public interface Programme extends EObject {
 	EList<Course> getCourses();
 
 	/**
-	 * Returns the value of the '<em><b>Specializations</b></em>' reference.
+	 * Returns the value of the '<em><b>Specializations</b></em>' reference list.
+	 * The list contents are of type {@link universityStudies.Specialization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specializations</em>' reference.
-	 * @see #setSpecializations(Specialization)
+	 * @return the value of the '<em>Specializations</em>' reference list.
 	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Specializations()
 	 * @model
 	 * @generated
 	 */
-	Specialization getSpecializations();
-
-	/**
-	 * Sets the value of the '{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Specializations</em>' reference.
-	 * @see #getSpecializations()
-	 * @generated
-	 */
-	void setSpecializations(Specialization value);
+	EList<Specialization> getSpecializations();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

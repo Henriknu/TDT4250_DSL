@@ -72,16 +72,26 @@ public interface Course extends EObject {
 	void setCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Credits</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Float}.
+	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credits</em>' attribute list.
+	 * @return the value of the '<em>Credits</em>' attribute.
+	 * @see #setCredits(float)
 	 * @see universityStudies.UniversityStudiesPackage#getCourse_Credits()
-	 * @model lower="5" upper="60"
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Float> getCredits();
+	float getCredits();
+
+	/**
+	 * Sets the value of the '{@link universityStudies.Course#getCredits <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Credits</em>' attribute.
+	 * @see #getCredits()
+	 * @generated
+	 */
+	void setCredits(float value);
 
 	/**
 	 * Returns the value of the '<em><b>Level</b></em>' attribute.
