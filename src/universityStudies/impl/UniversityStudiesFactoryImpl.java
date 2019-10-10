@@ -3,6 +3,7 @@
 package universityStudies.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -59,12 +60,47 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 			case UniversityStudiesPackage.COURSE: return createCourse();
 			case UniversityStudiesPackage.PROGRAMME: return createProgramme();
 			case UniversityStudiesPackage.SPECIALIZATION: return createSpecialization();
-			case UniversityStudiesPackage.STUDY_PLAN: return createStudyPlan();
 			case UniversityStudiesPackage.SEMESTER: return createSemester();
-			case UniversityStudiesPackage.RESULT: return createResult();
 			case UniversityStudiesPackage.DEPARTMENT: return createDepartment();
+			case UniversityStudiesPackage.COURSE_SLOT: return createCourseSlot();
+			case UniversityStudiesPackage.MANDATORY_COURSE_SLOT: return createMandatoryCourseSlot();
+			case UniversityStudiesPackage.ELECTIVE_COURSE_SLOT: return createElectiveCourseSlot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case UniversityStudiesPackage.PROGRAMME_TYPE:
+				return createprogrammeTypeFromString(eDataType, initialValue);
+			case UniversityStudiesPackage.SEASONS:
+				return createseasonsFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case UniversityStudiesPackage.PROGRAMME_TYPE:
+				return convertprogrammeTypeToString(eDataType, instanceValue);
+			case UniversityStudiesPackage.SEASONS:
+				return convertseasonsToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -103,16 +139,6 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StudyPlan createStudyPlan() {
-		StudyPlanImpl studyPlan = new StudyPlanImpl();
-		return studyPlan;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Semester createSemester() {
 		SemesterImpl semester = new SemesterImpl();
 		return semester;
@@ -123,8 +149,49 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Result createResult() {
-		ResultImpl result = new ResultImpl();
+	public Department createDepartment() {
+		DepartmentImpl department = new DepartmentImpl();
+		return department;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CourseSlot createCourseSlot() {
+		CourseSlotImpl courseSlot = new CourseSlotImpl();
+		return courseSlot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandatoryCourseSlot createMandatoryCourseSlot() {
+		MandatoryCourseSlotImpl mandatoryCourseSlot = new MandatoryCourseSlotImpl();
+		return mandatoryCourseSlot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ElectiveCourseSlot createElectiveCourseSlot() {
+		ElectiveCourseSlotImpl electiveCourseSlot = new ElectiveCourseSlotImpl();
+		return electiveCourseSlot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public programmeType createprogrammeTypeFromString(EDataType eDataType, String initialValue) {
+		programmeType result = programmeType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -133,9 +200,28 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Department createDepartment() {
-		DepartmentImpl department = new DepartmentImpl();
-		return department;
+	public String convertprogrammeTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public seasons createseasonsFromString(EDataType eDataType, String initialValue) {
+		seasons result = seasons.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertseasonsToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

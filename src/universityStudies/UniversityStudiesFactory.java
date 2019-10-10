@@ -49,15 +49,6 @@ public interface UniversityStudiesFactory extends EFactory {
 	Specialization createSpecialization();
 
 	/**
-	 * Returns a new object of class '<em>Study Plan</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Study Plan</em>'.
-	 * @generated
-	 */
-	StudyPlan createStudyPlan();
-
-	/**
 	 * Returns a new object of class '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,15 +58,6 @@ public interface UniversityStudiesFactory extends EFactory {
 	Semester createSemester();
 
 	/**
-	 * Returns a new object of class '<em>Result</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Result</em>'.
-	 * @generated
-	 */
-	Result createResult();
-
-	/**
 	 * Returns a new object of class '<em>Department</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +65,33 @@ public interface UniversityStudiesFactory extends EFactory {
 	 * @generated
 	 */
 	Department createDepartment();
+
+	/**
+	 * Returns a new object of class '<em>Course Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Course Slot</em>'.
+	 * @generated
+	 */
+	CourseSlot createCourseSlot();
+
+	/**
+	 * Returns a new object of class '<em>Mandatory Course Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mandatory Course Slot</em>'.
+	 * @generated
+	 */
+	MandatoryCourseSlot createMandatoryCourseSlot();
+
+	/**
+	 * Returns a new object of class '<em>Elective Course Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Elective Course Slot</em>'.
+	 * @generated
+	 */
+	ElectiveCourseSlot createElectiveCourseSlot();
 
 	/**
 	 * Returns the package supported by this factory.

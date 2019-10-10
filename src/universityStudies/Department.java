@@ -37,12 +37,14 @@ public interface Department extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Programmes</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link universityStudies.Programme#getDepartment <em>Department</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Programmes</em>' containment reference.
 	 * @see #setProgrammes(Programme)
 	 * @see universityStudies.UniversityStudiesPackage#getDepartment_Programmes()
-	 * @model containment="true"
+	 * @see universityStudies.Programme#getDepartment
+	 * @model opposite="Department" containment="true"
 	 * @generated
 	 */
 	Programme getProgrammes();

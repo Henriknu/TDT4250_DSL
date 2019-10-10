@@ -119,14 +119,30 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 		if (newProgrammes != programmes) {
 			NotificationChain msgs = null;
 			if (programmes != null)
-				msgs = ((InternalEObject)programmes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UniversityStudiesPackage.DEPARTMENT__PROGRAMMES, null, msgs);
+				msgs = ((InternalEObject)programmes).eInverseRemove(this, UniversityStudiesPackage.PROGRAMME__DEPARTMENT, Programme.class, msgs);
 			if (newProgrammes != null)
-				msgs = ((InternalEObject)newProgrammes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UniversityStudiesPackage.DEPARTMENT__PROGRAMMES, null, msgs);
+				msgs = ((InternalEObject)newProgrammes).eInverseAdd(this, UniversityStudiesPackage.PROGRAMME__DEPARTMENT, Programme.class, msgs);
 			msgs = basicSetProgrammes(newProgrammes, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.DEPARTMENT__PROGRAMMES, newProgrammes, newProgrammes));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UniversityStudiesPackage.DEPARTMENT__PROGRAMMES:
+				if (programmes != null)
+					msgs = ((InternalEObject)programmes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UniversityStudiesPackage.DEPARTMENT__PROGRAMMES, null, msgs);
+				return basicSetProgrammes((Programme)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

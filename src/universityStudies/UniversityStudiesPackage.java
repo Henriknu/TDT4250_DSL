@@ -4,6 +4,7 @@ package universityStudies;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -141,31 +142,13 @@ public interface UniversityStudiesPackage extends EPackage {
 	int PROGRAMME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Years</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME__YEARS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Number Of Semesters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__NUMBER_OF_SEMESTERS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME__COURSES = 2;
+	int PROGRAMME__NUMBER_OF_SEMESTERS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Specializations</b></em>' containment reference list.
@@ -174,7 +157,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__SPECIALIZATIONS = 3;
+	int PROGRAMME__SPECIALIZATIONS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -183,16 +166,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__NAME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME__TYPE = 5;
+	int PROGRAMME__NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
@@ -201,7 +175,25 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__SEMESTERS = 6;
+	int PROGRAMME__SEMESTERS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Department</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__DEPARTMENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Programme Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__PROGRAMME_TYPE = 5;
 
 	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
@@ -210,7 +202,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_FEATURE_COUNT = 7;
+	int PROGRAMME_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -277,70 +269,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	int SPECIALIZATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link universityStudies.impl.StudyPlanImpl <em>Study Plan</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see universityStudies.impl.StudyPlanImpl
-	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getStudyPlan()
-	 * @generated
-	 */
-	int STUDY_PLAN = 3;
-
-	/**
-	 * The feature id for the '<em><b>Semesters</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDY_PLAN__SEMESTERS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Programme</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDY_PLAN__PROGRAMME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Results</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDY_PLAN__RESULTS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Specializations</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDY_PLAN__SPECIALIZATIONS = 3;
-
-	/**
-	 * The number of structural features of the '<em>Study Plan</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDY_PLAN_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Study Plan</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDY_PLAN_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link universityStudies.impl.SemesterImpl <em>Semester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,34 +276,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getSemester()
 	 * @generated
 	 */
-	int SEMESTER = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER__COURSES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Year</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER__YEAR = 2;
+	int SEMESTER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Season</b></em>' attribute.
@@ -384,16 +285,25 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__SEASON = 3;
+	int SEMESTER__SEASON = 0;
 
 	/**
-	 * The feature id for the '<em><b>Studyplan</b></em>' reference.
+	 * The feature id for the '<em><b>Semester Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__STUDYPLAN = 4;
+	int SEMESTER__SEMESTER_NUMBER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Course Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__COURSE_SLOTS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Semester</em>' class.
@@ -402,7 +312,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_FEATURE_COUNT = 5;
+	int SEMESTER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Semester</em>' class.
@@ -414,89 +324,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	int SEMESTER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link universityStudies.impl.ResultImpl <em>Result</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see universityStudies.impl.ResultImpl
-	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getResult()
-	 * @generated
-	 */
-	int RESULT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Grade</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__GRADE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Studyplan</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__STUDYPLAN = 1;
-
-	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__DATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Candidate Nr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__CANDIDATE_NR = 3;
-
-	/**
-	 * The feature id for the '<em><b>Course</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__COURSE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Semester</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__SEMESTER = 5;
-
-	/**
-	 * The number of structural features of the '<em>Result</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Result</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT_OPERATION_COUNT = 0;
-
-
-	/**
 	 * The meta object id for the '{@link universityStudies.impl.DepartmentImpl <em>Department</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -504,7 +331,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getDepartment()
 	 * @generated
 	 */
-	int DEPARTMENT = 6;
+	int DEPARTMENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
@@ -541,6 +368,147 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEPARTMENT_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link universityStudies.impl.CourseSlotImpl <em>Course Slot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see universityStudies.impl.CourseSlotImpl
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getCourseSlot()
+	 * @generated
+	 */
+	int COURSE_SLOT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Course</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_SLOT__COURSE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Course Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_SLOT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Course Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_SLOT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link universityStudies.impl.MandatoryCourseSlotImpl <em>Mandatory Course Slot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see universityStudies.impl.MandatoryCourseSlotImpl
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getMandatoryCourseSlot()
+	 * @generated
+	 */
+	int MANDATORY_COURSE_SLOT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Course</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_COURSE_SLOT__COURSE = COURSE_SLOT__COURSE;
+
+	/**
+	 * The number of structural features of the '<em>Mandatory Course Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_COURSE_SLOT_FEATURE_COUNT = COURSE_SLOT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mandatory Course Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_COURSE_SLOT_OPERATION_COUNT = COURSE_SLOT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link universityStudies.impl.ElectiveCourseSlotImpl <em>Elective Course Slot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see universityStudies.impl.ElectiveCourseSlotImpl
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getElectiveCourseSlot()
+	 * @generated
+	 */
+	int ELECTIVE_COURSE_SLOT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Course</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELECTIVE_COURSE_SLOT__COURSE = COURSE_SLOT__COURSE;
+
+	/**
+	 * The feature id for the '<em><b>Optional Courses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELECTIVE_COURSE_SLOT__OPTIONAL_COURSES = COURSE_SLOT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Elective Course Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELECTIVE_COURSE_SLOT_FEATURE_COUNT = COURSE_SLOT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Elective Course Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELECTIVE_COURSE_SLOT_OPERATION_COUNT = COURSE_SLOT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link universityStudies.programmeType <em>programme Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see universityStudies.programmeType
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getprogrammeType()
+	 * @generated
+	 */
+	int PROGRAMME_TYPE = 8;
+
+	/**
+	 * The meta object id for the '{@link universityStudies.seasons <em>seasons</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see universityStudies.seasons
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getseasons()
+	 * @generated
+	 */
+	int SEASONS = 9;
 
 
 	/**
@@ -619,17 +587,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	EClass getProgramme();
 
 	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getYears <em>Years</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Years</em>'.
-	 * @see universityStudies.Programme#getYears()
-	 * @see #getProgramme()
-	 * @generated
-	 */
-	EAttribute getProgramme_Years();
-
-	/**
 	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getNumberOfSemesters <em>Number Of Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -652,15 +609,26 @@ public interface UniversityStudiesPackage extends EPackage {
 	EReference getProgramme_Semesters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link universityStudies.Programme#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the container reference '{@link universityStudies.Programme#getDepartment <em>Department</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see universityStudies.Programme#getCourses()
+	 * @return the meta object for the container reference '<em>Department</em>'.
+	 * @see universityStudies.Programme#getDepartment()
 	 * @see #getProgramme()
 	 * @generated
 	 */
-	EReference getProgramme_Courses();
+	EReference getProgramme_Department();
+
+	/**
+	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getProgrammeType <em>Programme Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Programme Type</em>'.
+	 * @see universityStudies.Programme#getProgrammeType()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EAttribute getProgramme_ProgrammeType();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}'.
@@ -683,17 +651,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProgramme_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see universityStudies.Programme#getType()
-	 * @see #getProgramme()
-	 * @generated
-	 */
-	EAttribute getProgramme_Type();
 
 	/**
 	 * Returns the meta object for class '{@link universityStudies.Specialization <em>Specialization</em>}'.
@@ -739,60 +696,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	EReference getSpecialization_Courses();
 
 	/**
-	 * Returns the meta object for class '{@link universityStudies.StudyPlan <em>Study Plan</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Study Plan</em>'.
-	 * @see universityStudies.StudyPlan
-	 * @generated
-	 */
-	EClass getStudyPlan();
-
-	/**
-	 * Returns the meta object for the reference list '{@link universityStudies.StudyPlan#getSemesters <em>Semesters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Semesters</em>'.
-	 * @see universityStudies.StudyPlan#getSemesters()
-	 * @see #getStudyPlan()
-	 * @generated
-	 */
-	EReference getStudyPlan_Semesters();
-
-	/**
-	 * Returns the meta object for the reference '{@link universityStudies.StudyPlan#getProgramme <em>Programme</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme</em>'.
-	 * @see universityStudies.StudyPlan#getProgramme()
-	 * @see #getStudyPlan()
-	 * @generated
-	 */
-	EReference getStudyPlan_Programme();
-
-	/**
-	 * Returns the meta object for the reference '{@link universityStudies.StudyPlan#getResults <em>Results</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Results</em>'.
-	 * @see universityStudies.StudyPlan#getResults()
-	 * @see #getStudyPlan()
-	 * @generated
-	 */
-	EReference getStudyPlan_Results();
-
-	/**
-	 * Returns the meta object for the reference list '{@link universityStudies.StudyPlan#getSpecializations <em>Specializations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Specializations</em>'.
-	 * @see universityStudies.StudyPlan#getSpecializations()
-	 * @see #getStudyPlan()
-	 * @generated
-	 */
-	EReference getStudyPlan_Specializations();
-
-	/**
 	 * Returns the meta object for class '{@link universityStudies.Semester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -801,39 +704,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSemester();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Semester#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see universityStudies.Semester#getName()
-	 * @see #getSemester()
-	 * @generated
-	 */
-	EAttribute getSemester_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link universityStudies.Semester#getCourses <em>Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see universityStudies.Semester#getCourses()
-	 * @see #getSemester()
-	 * @generated
-	 */
-	EReference getSemester_Courses();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Semester#getYear <em>Year</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Year</em>'.
-	 * @see universityStudies.Semester#getYear()
-	 * @see #getSemester()
-	 * @generated
-	 */
-	EAttribute getSemester_Year();
 
 	/**
 	 * Returns the meta object for the attribute '{@link universityStudies.Semester#getSeason <em>Season</em>}'.
@@ -847,91 +717,26 @@ public interface UniversityStudiesPackage extends EPackage {
 	EAttribute getSemester_Season();
 
 	/**
-	 * Returns the meta object for the reference '{@link universityStudies.Semester#getStudyplan <em>Studyplan</em>}'.
+	 * Returns the meta object for the attribute '{@link universityStudies.Semester#getSemesterNumber <em>Semester Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Studyplan</em>'.
-	 * @see universityStudies.Semester#getStudyplan()
+	 * @return the meta object for the attribute '<em>Semester Number</em>'.
+	 * @see universityStudies.Semester#getSemesterNumber()
 	 * @see #getSemester()
 	 * @generated
 	 */
-	EReference getSemester_Studyplan();
+	EAttribute getSemester_SemesterNumber();
 
 	/**
-	 * Returns the meta object for class '{@link universityStudies.Result <em>Result</em>}'.
+	 * Returns the meta object for the containment reference list '{@link universityStudies.Semester#getCourseSlots <em>Course Slots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Result</em>'.
-	 * @see universityStudies.Result
+	 * @return the meta object for the containment reference list '<em>Course Slots</em>'.
+	 * @see universityStudies.Semester#getCourseSlots()
+	 * @see #getSemester()
 	 * @generated
 	 */
-	EClass getResult();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Result#getGrade <em>Grade</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Grade</em>'.
-	 * @see universityStudies.Result#getGrade()
-	 * @see #getResult()
-	 * @generated
-	 */
-	EAttribute getResult_Grade();
-
-	/**
-	 * Returns the meta object for the reference '{@link universityStudies.Result#getStudyplan <em>Studyplan</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Studyplan</em>'.
-	 * @see universityStudies.Result#getStudyplan()
-	 * @see #getResult()
-	 * @generated
-	 */
-	EReference getResult_Studyplan();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Result#getDate <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see universityStudies.Result#getDate()
-	 * @see #getResult()
-	 * @generated
-	 */
-	EAttribute getResult_Date();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Result#getCandidateNr <em>Candidate Nr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Candidate Nr</em>'.
-	 * @see universityStudies.Result#getCandidateNr()
-	 * @see #getResult()
-	 * @generated
-	 */
-	EAttribute getResult_CandidateNr();
-
-	/**
-	 * Returns the meta object for the reference '{@link universityStudies.Result#getCourse <em>Course</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Course</em>'.
-	 * @see universityStudies.Result#getCourse()
-	 * @see #getResult()
-	 * @generated
-	 */
-	EReference getResult_Course();
-
-	/**
-	 * Returns the meta object for the reference '{@link universityStudies.Result#getSemester <em>Semester</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Semester</em>'.
-	 * @see universityStudies.Result#getSemester()
-	 * @see #getResult()
-	 * @generated
-	 */
-	EReference getResult_Semester();
+	EReference getSemester_CourseSlots();
 
 	/**
 	 * Returns the meta object for class '{@link universityStudies.Department <em>Department</em>}'.
@@ -964,6 +769,78 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDepartment_Programmes();
+
+	/**
+	 * Returns the meta object for class '{@link universityStudies.CourseSlot <em>Course Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Course Slot</em>'.
+	 * @see universityStudies.CourseSlot
+	 * @generated
+	 */
+	EClass getCourseSlot();
+
+	/**
+	 * Returns the meta object for the reference '{@link universityStudies.CourseSlot#getCourse <em>Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Course</em>'.
+	 * @see universityStudies.CourseSlot#getCourse()
+	 * @see #getCourseSlot()
+	 * @generated
+	 */
+	EReference getCourseSlot_Course();
+
+	/**
+	 * Returns the meta object for class '{@link universityStudies.MandatoryCourseSlot <em>Mandatory Course Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mandatory Course Slot</em>'.
+	 * @see universityStudies.MandatoryCourseSlot
+	 * @generated
+	 */
+	EClass getMandatoryCourseSlot();
+
+	/**
+	 * Returns the meta object for class '{@link universityStudies.ElectiveCourseSlot <em>Elective Course Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Elective Course Slot</em>'.
+	 * @see universityStudies.ElectiveCourseSlot
+	 * @generated
+	 */
+	EClass getElectiveCourseSlot();
+
+	/**
+	 * Returns the meta object for the reference list '{@link universityStudies.ElectiveCourseSlot#getOptionalCourses <em>Optional Courses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Optional Courses</em>'.
+	 * @see universityStudies.ElectiveCourseSlot#getOptionalCourses()
+	 * @see #getElectiveCourseSlot()
+	 * @generated
+	 */
+	EReference getElectiveCourseSlot_OptionalCourses();
+
+	/**
+	 * Returns the meta object for enum '{@link universityStudies.programmeType <em>programme Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>programme Type</em>'.
+	 * @see universityStudies.programmeType
+	 * @generated
+	 */
+	EEnum getprogrammeType();
+
+	/**
+	 * Returns the meta object for enum '{@link universityStudies.seasons <em>seasons</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>seasons</em>'.
+	 * @see universityStudies.seasons
+	 * @generated
+	 */
+	EEnum getseasons();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1049,14 +926,6 @@ public interface UniversityStudiesPackage extends EPackage {
 		EClass PROGRAMME = eINSTANCE.getProgramme();
 
 		/**
-		 * The meta object literal for the '<em><b>Years</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROGRAMME__YEARS = eINSTANCE.getProgramme_Years();
-
-		/**
 		 * The meta object literal for the '<em><b>Number Of Semesters</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1073,12 +942,20 @@ public interface UniversityStudiesPackage extends EPackage {
 		EReference PROGRAMME__SEMESTERS = eINSTANCE.getProgramme_Semesters();
 
 		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Department</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME__COURSES = eINSTANCE.getProgramme_Courses();
+		EReference PROGRAMME__DEPARTMENT = eINSTANCE.getProgramme_Department();
+
+		/**
+		 * The meta object literal for the '<em><b>Programme Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME__PROGRAMME_TYPE = eINSTANCE.getProgramme_ProgrammeType();
 
 		/**
 		 * The meta object literal for the '<em><b>Specializations</b></em>' containment reference list feature.
@@ -1095,14 +972,6 @@ public interface UniversityStudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROGRAMME__NAME = eINSTANCE.getProgramme_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROGRAMME__TYPE = eINSTANCE.getProgramme_Type();
 
 		/**
 		 * The meta object literal for the '{@link universityStudies.impl.SpecializationImpl <em>Specialization</em>}' class.
@@ -1139,48 +1008,6 @@ public interface UniversityStudiesPackage extends EPackage {
 		EReference SPECIALIZATION__COURSES = eINSTANCE.getSpecialization_Courses();
 
 		/**
-		 * The meta object literal for the '{@link universityStudies.impl.StudyPlanImpl <em>Study Plan</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see universityStudies.impl.StudyPlanImpl
-		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getStudyPlan()
-		 * @generated
-		 */
-		EClass STUDY_PLAN = eINSTANCE.getStudyPlan();
-
-		/**
-		 * The meta object literal for the '<em><b>Semesters</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STUDY_PLAN__SEMESTERS = eINSTANCE.getStudyPlan_Semesters();
-
-		/**
-		 * The meta object literal for the '<em><b>Programme</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STUDY_PLAN__PROGRAMME = eINSTANCE.getStudyPlan_Programme();
-
-		/**
-		 * The meta object literal for the '<em><b>Results</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STUDY_PLAN__RESULTS = eINSTANCE.getStudyPlan_Results();
-
-		/**
-		 * The meta object literal for the '<em><b>Specializations</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STUDY_PLAN__SPECIALIZATIONS = eINSTANCE.getStudyPlan_Specializations();
-
-		/**
 		 * The meta object literal for the '{@link universityStudies.impl.SemesterImpl <em>Semester</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1191,30 +1018,6 @@ public interface UniversityStudiesPackage extends EPackage {
 		EClass SEMESTER = eINSTANCE.getSemester();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMESTER__NAME = eINSTANCE.getSemester_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEMESTER__COURSES = eINSTANCE.getSemester_Courses();
-
-		/**
-		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMESTER__YEAR = eINSTANCE.getSemester_Year();
-
-		/**
 		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1223,70 +1026,20 @@ public interface UniversityStudiesPackage extends EPackage {
 		EAttribute SEMESTER__SEASON = eINSTANCE.getSemester_Season();
 
 		/**
-		 * The meta object literal for the '<em><b>Studyplan</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Semester Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SEMESTER__STUDYPLAN = eINSTANCE.getSemester_Studyplan();
+		EAttribute SEMESTER__SEMESTER_NUMBER = eINSTANCE.getSemester_SemesterNumber();
 
 		/**
-		 * The meta object literal for the '{@link universityStudies.impl.ResultImpl <em>Result</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see universityStudies.impl.ResultImpl
-		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getResult()
-		 * @generated
-		 */
-		EClass RESULT = eINSTANCE.getResult();
-
-		/**
-		 * The meta object literal for the '<em><b>Grade</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Course Slots</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESULT__GRADE = eINSTANCE.getResult_Grade();
-
-		/**
-		 * The meta object literal for the '<em><b>Studyplan</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESULT__STUDYPLAN = eINSTANCE.getResult_Studyplan();
-
-		/**
-		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESULT__DATE = eINSTANCE.getResult_Date();
-
-		/**
-		 * The meta object literal for the '<em><b>Candidate Nr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESULT__CANDIDATE_NR = eINSTANCE.getResult_CandidateNr();
-
-		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESULT__COURSE = eINSTANCE.getResult_Course();
-
-		/**
-		 * The meta object literal for the '<em><b>Semester</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESULT__SEMESTER = eINSTANCE.getResult_Semester();
+		EReference SEMESTER__COURSE_SLOTS = eINSTANCE.getSemester_CourseSlots();
 
 		/**
 		 * The meta object literal for the '{@link universityStudies.impl.DepartmentImpl <em>Department</em>}' class.
@@ -1313,6 +1066,72 @@ public interface UniversityStudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEPARTMENT__PROGRAMMES = eINSTANCE.getDepartment_Programmes();
+
+		/**
+		 * The meta object literal for the '{@link universityStudies.impl.CourseSlotImpl <em>Course Slot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see universityStudies.impl.CourseSlotImpl
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getCourseSlot()
+		 * @generated
+		 */
+		EClass COURSE_SLOT = eINSTANCE.getCourseSlot();
+
+		/**
+		 * The meta object literal for the '<em><b>Course</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COURSE_SLOT__COURSE = eINSTANCE.getCourseSlot_Course();
+
+		/**
+		 * The meta object literal for the '{@link universityStudies.impl.MandatoryCourseSlotImpl <em>Mandatory Course Slot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see universityStudies.impl.MandatoryCourseSlotImpl
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getMandatoryCourseSlot()
+		 * @generated
+		 */
+		EClass MANDATORY_COURSE_SLOT = eINSTANCE.getMandatoryCourseSlot();
+
+		/**
+		 * The meta object literal for the '{@link universityStudies.impl.ElectiveCourseSlotImpl <em>Elective Course Slot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see universityStudies.impl.ElectiveCourseSlotImpl
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getElectiveCourseSlot()
+		 * @generated
+		 */
+		EClass ELECTIVE_COURSE_SLOT = eINSTANCE.getElectiveCourseSlot();
+
+		/**
+		 * The meta object literal for the '<em><b>Optional Courses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELECTIVE_COURSE_SLOT__OPTIONAL_COURSES = eINSTANCE.getElectiveCourseSlot_OptionalCourses();
+
+		/**
+		 * The meta object literal for the '{@link universityStudies.programmeType <em>programme Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see universityStudies.programmeType
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getprogrammeType()
+		 * @generated
+		 */
+		EEnum PROGRAMME_TYPE = eINSTANCE.getprogrammeType();
+
+		/**
+		 * The meta object literal for the '{@link universityStudies.seasons <em>seasons</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see universityStudies.seasons
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getseasons()
+		 * @generated
+		 */
+		EEnum SEASONS = eINSTANCE.getseasons();
 
 	}
 

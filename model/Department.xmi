@@ -35,10 +35,20 @@
       code="TDT4120"/>
   <Courses name="Informasjonssystemer"
       code="TDT4175"/>
+  <Courses name="Matematikk 4D"
+      code="TMA4135"
+      credits="7.5"
+      level="3"/>
+  <Courses name="Webutvikling"
+      code="IT2810"/>
+  <Courses name="Informasjonsgjenfinning"
+      code="TDT4117"/>
+  <Courses name="Kognitive arkitekturer"
+      code="TDT4137"/>
   <Programmes
       numberOfSemesters="10"
       name="MTDT"
-      programmeType="Integrert Master">
+      programmeType="IntegrertMaster">
     <specializations
         name="Programvare Systemer">
       <furtherSpecializations
@@ -47,9 +57,40 @@
           name="Interaksjonsdesign og spillutvikling"/>
       <furtherSpecializations
           name="Digital virksomhetsutvikling"/>
+      <semesters
+          semesterNumber="5"
+          name="H2018">
+        <courseSlots
+            xsi:type="universityStudies:MandatoryCourseSlot"
+            course="//@Courses.11"/>
+        <courseSlots
+            xsi:type="universityStudies:MandatoryCourseSlot"
+            course="//@Courses.10"/>
+        <courseSlots
+            xsi:type="universityStudies:MandatoryCourseSlot"
+            course="//@Courses.12"/>
+        <courseSlots
+            xsi:type="universityStudies:ElectiveCourseSlot"
+            course="//@Courses.13"
+            optionalCourses="//@Courses.13 //@Courses.14 //@Courses.15"/>
+      </semesters>
     </specializations>
     <specializations
         name="Kunstig intelligens"/>
-    <semesters/>
+    <semesters
+        name="H2016">
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.4"/>
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.3"/>
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.5"/>
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.6"/>
+    </semesters>
   </Programmes>
 </universityStudies:Department>

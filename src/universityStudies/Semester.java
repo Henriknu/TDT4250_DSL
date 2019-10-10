@@ -14,11 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link universityStudies.Semester#getName <em>Name</em>}</li>
- *   <li>{@link universityStudies.Semester#getCourses <em>Courses</em>}</li>
- *   <li>{@link universityStudies.Semester#getYear <em>Year</em>}</li>
  *   <li>{@link universityStudies.Semester#getSeason <em>Season</em>}</li>
- *   <li>{@link universityStudies.Semester#getStudyplan <em>Studyplan</em>}</li>
+ *   <li>{@link universityStudies.Semester#getSemesterNumber <em>Semester Number</em>}</li>
+ *   <li>{@link universityStudies.Semester#getCourseSlots <em>Course Slots</em>}</li>
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getSemester()
@@ -27,103 +25,62 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Semester extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see universityStudies.UniversityStudiesPackage#getSemester_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link universityStudies.Semester#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Courses</b></em>' reference list.
-	 * The list contents are of type {@link universityStudies.Course}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Courses</em>' reference list.
-	 * @see universityStudies.UniversityStudiesPackage#getSemester_Courses()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<Course> getCourses();
-
-	/**
-	 * Returns the value of the '<em><b>Year</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Year</em>' attribute.
-	 * @see #setYear(int)
-	 * @see universityStudies.UniversityStudiesPackage#getSemester_Year()
-	 * @model
-	 * @generated
-	 */
-	int getYear();
-
-	/**
-	 * Sets the value of the '{@link universityStudies.Semester#getYear <em>Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Year</em>' attribute.
-	 * @see #getYear()
-	 * @generated
-	 */
-	void setYear(int value);
-
-	/**
 	 * Returns the value of the '<em><b>Season</b></em>' attribute.
+	 * The literals are from the enumeration {@link universityStudies.seasons}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Season</em>' attribute.
-	 * @see #setSeason(String)
+	 * @see universityStudies.seasons
+	 * @see #setSeason(seasons)
 	 * @see universityStudies.UniversityStudiesPackage#getSemester_Season()
 	 * @model
 	 * @generated
 	 */
-	String getSeason();
+	seasons getSeason();
 
 	/**
 	 * Sets the value of the '{@link universityStudies.Semester#getSeason <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Season</em>' attribute.
+	 * @see universityStudies.seasons
 	 * @see #getSeason()
 	 * @generated
 	 */
-	void setSeason(String value);
+	void setSeason(seasons value);
 
 	/**
-	 * Returns the value of the '<em><b>Studyplan</b></em>' reference.
+	 * Returns the value of the '<em><b>Semester Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Studyplan</em>' reference.
-	 * @see #setStudyplan(StudyPlan)
-	 * @see universityStudies.UniversityStudiesPackage#getSemester_Studyplan()
-	 * @model required="true"
+	 * @return the value of the '<em>Semester Number</em>' attribute.
+	 * @see #setSemesterNumber(int)
+	 * @see universityStudies.UniversityStudiesPackage#getSemester_SemesterNumber()
+	 * @model
 	 * @generated
 	 */
-	StudyPlan getStudyplan();
+	int getSemesterNumber();
 
 	/**
-	 * Sets the value of the '{@link universityStudies.Semester#getStudyplan <em>Studyplan</em>}' reference.
+	 * Sets the value of the '{@link universityStudies.Semester#getSemesterNumber <em>Semester Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Studyplan</em>' reference.
-	 * @see #getStudyplan()
+	 * @param value the new value of the '<em>Semester Number</em>' attribute.
+	 * @see #getSemesterNumber()
 	 * @generated
 	 */
-	void setStudyplan(StudyPlan value);
+	void setSemesterNumber(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Course Slots</b></em>' containment reference list.
+	 * The list contents are of type {@link universityStudies.CourseSlot}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course Slots</em>' containment reference list.
+	 * @see universityStudies.UniversityStudiesPackage#getSemester_CourseSlots()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<CourseSlot> getCourseSlots();
 
 } // Semester
