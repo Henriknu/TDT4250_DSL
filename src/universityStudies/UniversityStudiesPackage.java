@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see universityStudies.UniversityStudiesFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface UniversityStudiesPackage extends EPackage {
@@ -85,7 +86,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	int COURSE__CODE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Credits</b></em>' attribute list.
+	 * The feature id for the '<em><b>Credits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -94,7 +95,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	int COURSE__CREDITS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute list.
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,7 +141,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	int PROGRAMME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Years</b></em>' attribute list.
+	 * The feature id for the '<em><b>Years</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -167,7 +168,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	int PROGRAMME__COURSES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Specializations</b></em>' reference.
+	 * The feature id for the '<em><b>Specializations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -231,7 +232,7 @@ public interface UniversityStudiesPackage extends EPackage {
 	int SPECIALIZATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Further Specializations</b></em>' reference.
+	 * The feature id for the '<em><b>Further Specializations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -519,10 +520,10 @@ public interface UniversityStudiesPackage extends EPackage {
 	EAttribute getCourse_Code();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link universityStudies.Course#getCredits <em>Credits</em>}'.
+	 * Returns the meta object for the attribute '{@link universityStudies.Course#getCredits <em>Credits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Credits</em>'.
+	 * @return the meta object for the attribute '<em>Credits</em>'.
 	 * @see universityStudies.Course#getCredits()
 	 * @see #getCourse()
 	 * @generated
@@ -530,10 +531,10 @@ public interface UniversityStudiesPackage extends EPackage {
 	EAttribute getCourse_Credits();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link universityStudies.Course#getLevel <em>Level</em>}'.
+	 * Returns the meta object for the attribute '{@link universityStudies.Course#getLevel <em>Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Level</em>'.
+	 * @return the meta object for the attribute '<em>Level</em>'.
 	 * @see universityStudies.Course#getLevel()
 	 * @see #getCourse()
 	 * @generated
@@ -562,10 +563,10 @@ public interface UniversityStudiesPackage extends EPackage {
 	EClass getProgramme();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link universityStudies.Programme#getYears <em>Years</em>}'.
+	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getYears <em>Years</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Years</em>'.
+	 * @return the meta object for the attribute '<em>Years</em>'.
 	 * @see universityStudies.Programme#getYears()
 	 * @see #getProgramme()
 	 * @generated
@@ -595,10 +596,10 @@ public interface UniversityStudiesPackage extends EPackage {
 	EReference getProgramme_Courses();
 
 	/**
-	 * Returns the meta object for the reference '{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}'.
+	 * Returns the meta object for the reference list '{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Specializations</em>'.
+	 * @return the meta object for the reference list '<em>Specializations</em>'.
 	 * @see universityStudies.Programme#getSpecializations()
 	 * @see #getProgramme()
 	 * @generated
@@ -649,10 +650,10 @@ public interface UniversityStudiesPackage extends EPackage {
 	EAttribute getSpecialization_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link universityStudies.Specialization#getFurtherSpecializations <em>Further Specializations</em>}'.
+	 * Returns the meta object for the reference list '{@link universityStudies.Specialization#getFurtherSpecializations <em>Further Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Further Specializations</em>'.
+	 * @return the meta object for the reference list '<em>Further Specializations</em>'.
 	 * @see universityStudies.Specialization#getFurtherSpecializations()
 	 * @see #getSpecialization()
 	 * @generated
@@ -915,7 +916,7 @@ public interface UniversityStudiesPackage extends EPackage {
 		EAttribute COURSE__CODE = eINSTANCE.getCourse_Code();
 
 		/**
-		 * The meta object literal for the '<em><b>Credits</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Credits</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -923,7 +924,7 @@ public interface UniversityStudiesPackage extends EPackage {
 		EAttribute COURSE__CREDITS = eINSTANCE.getCourse_Credits();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -949,7 +950,7 @@ public interface UniversityStudiesPackage extends EPackage {
 		EClass PROGRAMME = eINSTANCE.getProgramme();
 
 		/**
-		 * The meta object literal for the '<em><b>Years</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Years</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -973,7 +974,7 @@ public interface UniversityStudiesPackage extends EPackage {
 		EReference PROGRAMME__COURSES = eINSTANCE.getProgramme_Courses();
 
 		/**
-		 * The meta object literal for the '<em><b>Specializations</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Specializations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1015,7 +1016,7 @@ public interface UniversityStudiesPackage extends EPackage {
 		EAttribute SPECIALIZATION__NAME = eINSTANCE.getSpecialization_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Further Specializations</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Further Specializations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

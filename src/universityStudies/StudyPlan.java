@@ -89,7 +89,7 @@ public interface StudyPlan extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Specializations</em>' reference list.
 	 * @see universityStudies.UniversityStudiesPackage#getStudyPlan_Specializations()
-	 * @model upper="2"
+	 * @model
 	 * @generated
 	 */
 	EList<Specialization> getSpecializations();

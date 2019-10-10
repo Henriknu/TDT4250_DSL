@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getCourse()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidCode Validcredits'"
  * @generated
  */
 public interface Course extends EObject {
@@ -72,28 +72,48 @@ public interface Course extends EObject {
 	void setCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Credits</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Float}.
+	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credits</em>' attribute list.
+	 * @return the value of the '<em>Credits</em>' attribute.
+	 * @see #setCredits(float)
 	 * @see universityStudies.UniversityStudiesPackage#getCourse_Credits()
-	 * @model lower="5" upper="60"
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Float> getCredits();
+	float getCredits();
 
 	/**
-	 * Returns the value of the '<em><b>Level</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Sets the value of the '{@link universityStudies.Course#getCredits <em>Credits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Level</em>' attribute list.
-	 * @see universityStudies.UniversityStudiesPackage#getCourse_Level()
-	 * @model required="true" upper="4"
+	 * @param value the new value of the '<em>Credits</em>' attribute.
+	 * @see #getCredits()
 	 * @generated
 	 */
-	EList<Integer> getLevel();
+	void setCredits(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Level</em>' attribute.
+	 * @see #setLevel(int)
+	 * @see universityStudies.UniversityStudiesPackage#getCourse_Level()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getLevel();
+
+	/**
+	 * Sets the value of the '{@link universityStudies.Course#getLevel <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Level</em>' attribute.
+	 * @see #getLevel()
+	 * @generated
+	 */
+	void setLevel(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Programmes</b></em>' containment reference list.
