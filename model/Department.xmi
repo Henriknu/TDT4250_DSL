@@ -45,6 +45,26 @@
       code="TDT4117"/>
   <Courses name="Kognitive arkitekturer"
       code="TDT4137"/>
+  <Courses name="Medisin for realfags- og teknologistudenter"
+      code="MFEL3010"
+      credits="7.5"
+      level="3"/>
+  <Courses name="Bioteknologi og teknikk"
+      code="FI3107"
+      credits="7.5"
+      level="3"/>
+  <Courses name="Programmeringslab for dateteknologi"
+      code="TDT4112"
+      credits="7.5"
+      level="1"/>
+  <Courses name="Krets- og digitalteknikk"
+      code="TFE4101"
+      credits="7.5"
+      level="1"/>
+  <Courses name="Matematikk 3"
+      code="TMA4115"
+      credits="7.5"
+      level="1"/>
   <Programmes
       numberOfSemesters="10"
       name="MTDT"
@@ -52,7 +72,22 @@
     <specializations
         name="Programvare Systemer">
       <furtherSpecializations
-          name="Programvareutvikling"/>
+          name="Programvareutvikling">
+        <semesters
+            semesterNumber="7"
+            name="H2019">
+          <courseSlots
+              xsi:type="universityStudies:MandatoryCourseSlot"
+              course="//@Courses.2"/>
+          <courseSlots
+              xsi:type="universityStudies:MandatoryCourseSlot"
+              course="//@Courses.0"/>
+          <courseSlots
+              xsi:type="universityStudies:ElectiveCourseSlot"
+              course="//@Courses.16"
+              optionalCourses="//@Courses.16 //@Courses.17"/>
+        </semesters>
+      </furtherSpecializations>
       <furtherSpecializations
           name="Interaksjonsdesign og spillutvikling"/>
       <furtherSpecializations
@@ -91,6 +126,23 @@
       <courseSlots
           xsi:type="universityStudies:MandatoryCourseSlot"
           course="//@Courses.6"/>
+    </semesters>
+    <semesters
+        season="Spring"
+        semesterNumber="1"
+        name="S2017">
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.7"/>
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.18"/>
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.20"/>
+      <courseSlots
+          xsi:type="universityStudies:MandatoryCourseSlot"
+          course="//@Courses.19"/>
     </semesters>
   </Programmes>
 </universityStudies:Department>
