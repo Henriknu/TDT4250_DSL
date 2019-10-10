@@ -67,15 +67,6 @@ public interface UniversityStudiesFactory extends EFactory {
 	Department createDepartment();
 
 	/**
-	 * Returns a new object of class '<em>Course Slot</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Course Slot</em>'.
-	 * @generated
-	 */
-	CourseSlot createCourseSlot();
-
-	/**
 	 * Returns a new object of class '<em>Mandatory Course Slot</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

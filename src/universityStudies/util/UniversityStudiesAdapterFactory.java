@@ -80,16 +80,24 @@ public class UniversityStudiesAdapterFactory extends AdapterFactoryImpl {
 				return createSpecializationAdapter();
 			}
 			@Override
-			public Adapter caseStudyPlan(StudyPlan object) {
-				return createStudyPlanAdapter();
-			}
-			@Override
 			public Adapter caseSemester(Semester object) {
 				return createSemesterAdapter();
 			}
 			@Override
-			public Adapter caseResult(Result object) {
-				return createResultAdapter();
+			public Adapter caseDepartment(Department object) {
+				return createDepartmentAdapter();
+			}
+			@Override
+			public Adapter caseCourseSlot(CourseSlot object) {
+				return createCourseSlotAdapter();
+			}
+			@Override
+			public Adapter caseMandatoryCourseSlot(MandatoryCourseSlot object) {
+				return createMandatoryCourseSlotAdapter();
+			}
+			@Override
+			public Adapter caseElectiveCourseSlot(ElectiveCourseSlot object) {
+				return createElectiveCourseSlotAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -154,20 +162,6 @@ public class UniversityStudiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link universityStudies.StudyPlan <em>Study Plan</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see universityStudies.StudyPlan
-	 * @generated
-	 */
-	public Adapter createStudyPlanAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link universityStudies.Semester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -182,16 +176,58 @@ public class UniversityStudiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link universityStudies.Result <em>Result</em>}'.
+	 * Creates a new adapter for an object of class '{@link universityStudies.Department <em>Department</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see universityStudies.Result
+	 * @see universityStudies.Department
 	 * @generated
 	 */
-	public Adapter createResultAdapter() {
+	public Adapter createDepartmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link universityStudies.CourseSlot <em>Course Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see universityStudies.CourseSlot
+	 * @generated
+	 */
+	public Adapter createCourseSlotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link universityStudies.MandatoryCourseSlot <em>Mandatory Course Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see universityStudies.MandatoryCourseSlot
+	 * @generated
+	 */
+	public Adapter createMandatoryCourseSlotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link universityStudies.ElectiveCourseSlot <em>Elective Course Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see universityStudies.ElectiveCourseSlot
+	 * @generated
+	 */
+	public Adapter createElectiveCourseSlotAdapter() {
 		return null;
 	}
 

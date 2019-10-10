@@ -242,13 +242,13 @@ public interface UniversityStudiesPackage extends EPackage {
 	int SPECIALIZATION__FURTHER_SPECIALIZATIONS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
+	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__COURSES = 2;
+	int SPECIALIZATION__SEMESTERS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Specialization</em>' class.
@@ -306,13 +306,22 @@ public interface UniversityStudiesPackage extends EPackage {
 	int SEMESTER__COURSE_SLOTS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_FEATURE_COUNT = 3;
+	int SEMESTER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Semester</em>' class.
@@ -368,7 +377,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEPARTMENT_OPERATION_COUNT = 0;
-
 
 	/**
 	 * The meta object id for the '{@link universityStudies.impl.CourseSlotImpl <em>Course Slot</em>}' class.
@@ -598,6 +606,28 @@ public interface UniversityStudiesPackage extends EPackage {
 	EAttribute getProgramme_NumberOfSemesters();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Specializations</em>'.
+	 * @see universityStudies.Programme#getSpecializations()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EReference getProgramme_Specializations();
+
+	/**
+	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see universityStudies.Programme#getName()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EAttribute getProgramme_Name();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link universityStudies.Programme#getSemesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -629,28 +659,6 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProgramme_ProgrammeType();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Specializations</em>'.
-	 * @see universityStudies.Programme#getSpecializations()
-	 * @see #getProgramme()
-	 * @generated
-	 */
-	EReference getProgramme_Specializations();
-
-	/**
-	 * Returns the meta object for the attribute '{@link universityStudies.Programme#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see universityStudies.Programme#getName()
-	 * @see #getProgramme()
-	 * @generated
-	 */
-	EAttribute getProgramme_Name();
 
 	/**
 	 * Returns the meta object for class '{@link universityStudies.Specialization <em>Specialization</em>}'.
@@ -685,15 +693,15 @@ public interface UniversityStudiesPackage extends EPackage {
 	EReference getSpecialization_FurtherSpecializations();
 
 	/**
-	 * Returns the meta object for the reference list '{@link universityStudies.Specialization#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the containment reference list '{@link universityStudies.Specialization#getSemesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see universityStudies.Specialization#getCourses()
+	 * @return the meta object for the containment reference list '<em>Semesters</em>'.
+	 * @see universityStudies.Specialization#getSemesters()
 	 * @see #getSpecialization()
 	 * @generated
 	 */
-	EReference getSpecialization_Courses();
+	EReference getSpecialization_Semesters();
 
 	/**
 	 * Returns the meta object for class '{@link universityStudies.Semester <em>Semester</em>}'.
@@ -737,6 +745,17 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSemester_CourseSlots();
+
+	/**
+	 * Returns the meta object for the attribute '{@link universityStudies.Semester#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see universityStudies.Semester#getName()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_Name();
 
 	/**
 	 * Returns the meta object for class '{@link universityStudies.Department <em>Department</em>}'.
@@ -934,6 +953,22 @@ public interface UniversityStudiesPackage extends EPackage {
 		EAttribute PROGRAMME__NUMBER_OF_SEMESTERS = eINSTANCE.getProgramme_NumberOfSemesters();
 
 		/**
+		 * The meta object literal for the '<em><b>Specializations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME__SPECIALIZATIONS = eINSTANCE.getProgramme_Specializations();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME__NAME = eINSTANCE.getProgramme_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -956,22 +991,6 @@ public interface UniversityStudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROGRAMME__PROGRAMME_TYPE = eINSTANCE.getProgramme_ProgrammeType();
-
-		/**
-		 * The meta object literal for the '<em><b>Specializations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROGRAMME__SPECIALIZATIONS = eINSTANCE.getProgramme_Specializations();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROGRAMME__NAME = eINSTANCE.getProgramme_Name();
 
 		/**
 		 * The meta object literal for the '{@link universityStudies.impl.SpecializationImpl <em>Specialization</em>}' class.
@@ -1000,12 +1019,12 @@ public interface UniversityStudiesPackage extends EPackage {
 		EReference SPECIALIZATION__FURTHER_SPECIALIZATIONS = eINSTANCE.getSpecialization_FurtherSpecializations();
 
 		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SPECIALIZATION__COURSES = eINSTANCE.getSpecialization_Courses();
+		EReference SPECIALIZATION__SEMESTERS = eINSTANCE.getSpecialization_Semesters();
 
 		/**
 		 * The meta object literal for the '{@link universityStudies.impl.SemesterImpl <em>Semester</em>}' class.
@@ -1040,6 +1059,14 @@ public interface UniversityStudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEMESTER__COURSE_SLOTS = eINSTANCE.getSemester_CourseSlots();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__NAME = eINSTANCE.getSemester_Name();
 
 		/**
 		 * The meta object literal for the '{@link universityStudies.impl.DepartmentImpl <em>Department</em>}' class.

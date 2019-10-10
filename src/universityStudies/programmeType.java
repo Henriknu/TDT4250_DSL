@@ -26,7 +26,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BACHELOR(6, "Bachelor", "Bachelor"),
+	BACHELOR(0, "Bachelor", "Bachelor"),
 
 	/**
 	 * The '<em><b>Master</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MASTER(4, "Master", "Master"),
+	MASTER(0, "Master", "Master"),
 
 	/**
 	 * The '<em><b>Integrert Master</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTEGRERT_MASTER(10, "IntegrertMaster", "IntegrertMaster"),
+	INTEGRERT_MASTER(0, "IntegrertMaster", "IntegrertMaster"),
 
 	/**
 	 * The '<em><b>Årsstudie</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ÅRSSTUDIE(2, "Årsstudie", "\u00c5rsstudie");
+	ÅRSSTUDIE(0, "Årsstudie", "\u00c5rsstudie");
 
 	/**
 	 * The '<em><b>Bachelor</b></em>' literal value.
@@ -67,7 +67,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BACHELOR_VALUE = 6;
+	public static final int BACHELOR_VALUE = 0;
 
 	/**
 	 * The '<em><b>Master</b></em>' literal value.
@@ -78,7 +78,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MASTER_VALUE = 4;
+	public static final int MASTER_VALUE = 0;
 
 	/**
 	 * The '<em><b>Integrert Master</b></em>' literal value.
@@ -89,7 +89,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INTEGRERT_MASTER_VALUE = 10;
+	public static final int INTEGRERT_MASTER_VALUE = 0;
 
 	/**
 	 * The '<em><b>Årsstudie</b></em>' literal value.
@@ -100,7 +100,7 @@ public enum programmeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ÅRSSTUDIE_VALUE = 2;
+	public static final int ÅRSSTUDIE_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>programme Type</b></em>' enumerators.
@@ -171,9 +171,6 @@ public enum programmeType implements Enumerator {
 	public static programmeType get(int value) {
 		switch (value) {
 			case BACHELOR_VALUE: return BACHELOR;
-			case MASTER_VALUE: return MASTER;
-			case INTEGRERT_MASTER_VALUE: return INTEGRERT_MASTER;
-			case ÅRSSTUDIE_VALUE: return ÅRSSTUDIE;
 		}
 		return null;
 	}

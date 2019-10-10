@@ -27,7 +27,7 @@ import universityStudies.UniversityStudiesPackage;
  *
  * @generated
  */
-public class CourseSlotImpl extends MinimalEObjectImpl.Container implements CourseSlot {
+public abstract class CourseSlotImpl extends MinimalEObjectImpl.Container implements CourseSlot {
 	/**
 	 * The cached value of the '{@link #getCourse() <em>Course</em>}' reference.
 	 * <!-- begin-user-doc -->

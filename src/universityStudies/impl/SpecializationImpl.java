@@ -3,19 +3,22 @@
 package universityStudies.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import universityStudies.Course;
+
+import universityStudies.Semester;
 import universityStudies.Specialization;
 import universityStudies.UniversityStudiesPackage;
 
@@ -29,7 +32,7 @@ import universityStudies.UniversityStudiesPackage;
  * <ul>
  *   <li>{@link universityStudies.impl.SpecializationImpl#getName <em>Name</em>}</li>
  *   <li>{@link universityStudies.impl.SpecializationImpl#getFurtherSpecializations <em>Further Specializations</em>}</li>
- *   <li>{@link universityStudies.impl.SpecializationImpl#getCourses <em>Courses</em>}</li>
+ *   <li>{@link universityStudies.impl.SpecializationImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,14 +69,14 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<Specialization> furtherSpecializations;
 
 	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCourses()
+	 * @see #getSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Course> courses;
+	protected EList<Semester> semesters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,11 +135,11 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Course> getCourses() {
-		if (courses == null) {
-			courses = new EObjectResolvingEList<Course>(Course.class, this, UniversityStudiesPackage.SPECIALIZATION__COURSES);
+	public EList<Semester> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, UniversityStudiesPackage.SPECIALIZATION__SEMESTERS);
 		}
-		return courses;
+		return semesters;
 	}
 
 	/**
@@ -149,6 +152,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
 				return ((InternalEList<?>)getFurtherSpecializations()).basicRemove(otherEnd, msgs);
+			case UniversityStudiesPackage.SPECIALIZATION__SEMESTERS:
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -165,8 +170,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				return getName();
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
 				return getFurtherSpecializations();
-			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
-				return getCourses();
+			case UniversityStudiesPackage.SPECIALIZATION__SEMESTERS:
+				return getSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,9 +192,9 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				getFurtherSpecializations().clear();
 				getFurtherSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
-			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
-				getCourses().clear();
-				getCourses().addAll((Collection<? extends Course>)newValue);
+			case UniversityStudiesPackage.SPECIALIZATION__SEMESTERS:
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semester>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -209,8 +214,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
 				getFurtherSpecializations().clear();
 				return;
-			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
-				getCourses().clear();
+			case UniversityStudiesPackage.SPECIALIZATION__SEMESTERS:
+				getSemesters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -228,8 +233,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
 				return furtherSpecializations != null && !furtherSpecializations.isEmpty();
-			case UniversityStudiesPackage.SPECIALIZATION__COURSES:
-				return courses != null && !courses.isEmpty();
+			case UniversityStudiesPackage.SPECIALIZATION__SEMESTERS:
+				return semesters != null && !semesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

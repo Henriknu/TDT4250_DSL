@@ -3,10 +3,12 @@
 package universityStudies.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import universityStudies.CourseSlot;
 import universityStudies.Semester;
 import universityStudies.UniversityStudiesPackage;
@@ -31,6 +34,7 @@ import universityStudies.seasons;
  *   <li>{@link universityStudies.impl.SemesterImpl#getSeason <em>Season</em>}</li>
  *   <li>{@link universityStudies.impl.SemesterImpl#getSemesterNumber <em>Semester Number</em>}</li>
  *   <li>{@link universityStudies.impl.SemesterImpl#getCourseSlots <em>Course Slots</em>}</li>
+ *   <li>{@link universityStudies.impl.SemesterImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,6 +89,26 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @ordered
 	 */
 	protected EList<CourseSlot> courseSlots;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,6 +188,27 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.SEMESTER__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -187,6 +232,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				return getSemesterNumber();
 			case UniversityStudiesPackage.SEMESTER__COURSE_SLOTS:
 				return getCourseSlots();
+			case UniversityStudiesPackage.SEMESTER__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,6 +257,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				getCourseSlots().clear();
 				getCourseSlots().addAll((Collection<? extends CourseSlot>)newValue);
 				return;
+			case UniversityStudiesPackage.SEMESTER__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -231,6 +281,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 			case UniversityStudiesPackage.SEMESTER__COURSE_SLOTS:
 				getCourseSlots().clear();
 				return;
+			case UniversityStudiesPackage.SEMESTER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,6 +302,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				return semesterNumber != SEMESTER_NUMBER_EDEFAULT;
 			case UniversityStudiesPackage.SEMESTER__COURSE_SLOTS:
 				return courseSlots != null && !courseSlots.isEmpty();
+			case UniversityStudiesPackage.SEMESTER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,6 +322,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 		result.append(season);
 		result.append(", semesterNumber: ");
 		result.append(semesterNumber);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

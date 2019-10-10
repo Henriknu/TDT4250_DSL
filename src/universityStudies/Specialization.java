@@ -3,6 +3,7 @@
 package universityStudies;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link universityStudies.Specialization#getName <em>Name</em>}</li>
  *   <li>{@link universityStudies.Specialization#getFurtherSpecializations <em>Further Specializations</em>}</li>
- *   <li>{@link universityStudies.Specialization#getCourses <em>Courses</em>}</li>
+ *   <li>{@link universityStudies.Specialization#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getSpecialization()
@@ -59,15 +60,15 @@ public interface Specialization extends EObject {
 	EList<Specialization> getFurtherSpecializations();
 
 	/**
-	 * Returns the value of the '<em><b>Courses</b></em>' reference list.
-	 * The list contents are of type {@link universityStudies.Course}.
+	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link universityStudies.Semester}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Courses</em>' reference list.
-	 * @see universityStudies.UniversityStudiesPackage#getSpecialization_Courses()
-	 * @model
+	 * @return the value of the '<em>Semesters</em>' containment reference list.
+	 * @see universityStudies.UniversityStudiesPackage#getSpecialization_Semesters()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Course> getCourses();
+	EList<Semester> getSemesters();
 
 } // Specialization

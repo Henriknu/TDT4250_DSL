@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import universityStudies.Course;
@@ -23,6 +23,7 @@ import universityStudies.UniversityStudiesFactory;
 import universityStudies.UniversityStudiesPackage;
 import universityStudies.programmeType;
 import universityStudies.seasons;
+
 import universityStudies.util.UniversityStudiesValidator;
 
 /**
@@ -249,6 +250,24 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProgramme_Specializations() {
+		return (EReference)programmeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgramme_Name() {
+		return (EAttribute)programmeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getProgramme_Semesters() {
 		return (EReference)programmeEClass.getEStructuralFeatures().get(3);
 	}
@@ -269,24 +288,6 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 */
 	public EAttribute getProgramme_ProgrammeType() {
 		return (EAttribute)programmeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getProgramme_Specializations() {
-		return (EReference)programmeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getProgramme_Name() {
-		return (EAttribute)programmeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -321,7 +322,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecialization_Courses() {
+	public EReference getSpecialization_Semesters() {
 		return (EReference)specializationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -359,6 +360,15 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 */
 	public EReference getSemester_CourseSlots() {
 		return (EReference)semesterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSemester_Name() {
+		return (EAttribute)semesterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -497,12 +507,13 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		specializationEClass = createEClass(SPECIALIZATION);
 		createEAttribute(specializationEClass, SPECIALIZATION__NAME);
 		createEReference(specializationEClass, SPECIALIZATION__FURTHER_SPECIALIZATIONS);
-		createEReference(specializationEClass, SPECIALIZATION__COURSES);
+		createEReference(specializationEClass, SPECIALIZATION__SEMESTERS);
 
 		semesterEClass = createEClass(SEMESTER);
 		createEAttribute(semesterEClass, SEMESTER__SEASON);
 		createEAttribute(semesterEClass, SEMESTER__SEMESTER_NUMBER);
 		createEReference(semesterEClass, SEMESTER__COURSE_SLOTS);
+		createEAttribute(semesterEClass, SEMESTER__NAME);
 
 		departmentEClass = createEClass(DEPARTMENT);
 		createEReference(departmentEClass, DEPARTMENT__COURSES);
@@ -571,18 +582,19 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpecialization_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecialization_FurtherSpecializations(), this.getSpecialization(), null, "furtherSpecializations", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecialization_Courses(), this.getCourse(), null, "courses", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecialization_Semesters(), this.getSemester(), null, "semesters", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSemester_Season(), this.getseasons(), "season", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSemester_SemesterNumber(), ecorePackage.getEInt(), "semesterNumber", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSemester_CourseSlots(), this.getCourseSlot(), null, "courseSlots", null, 1, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_Name(), ecorePackage.getEString(), "name", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDepartment_Courses(), this.getCourse(), null, "Courses", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Programmes(), this.getProgramme(), this.getProgramme_Department(), "Programmes", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(courseSlotEClass, CourseSlot.class, "CourseSlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(courseSlotEClass, CourseSlot.class, "CourseSlot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCourseSlot_Course(), this.getCourse(), null, "course", null, 0, 1, CourseSlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mandatoryCourseSlotEClass, MandatoryCourseSlot.class, "MandatoryCourseSlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -633,7 +645,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		  (programmeEClass,
 		   source,
 		   new String[] {
-			   "constraints", "ValidYears"
+			   "constraints", "validNumberOfSemesters"
 		   });
 		addAnnotation
 		  (semesterEClass,

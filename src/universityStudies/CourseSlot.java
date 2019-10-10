@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getCourseSlot()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface CourseSlot extends EObject {

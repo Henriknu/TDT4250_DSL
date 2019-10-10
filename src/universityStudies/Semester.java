@@ -3,6 +3,7 @@
 package universityStudies;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link universityStudies.Semester#getSeason <em>Season</em>}</li>
  *   <li>{@link universityStudies.Semester#getSemesterNumber <em>Semester Number</em>}</li>
  *   <li>{@link universityStudies.Semester#getCourseSlots <em>Course Slots</em>}</li>
+ *   <li>{@link universityStudies.Semester#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getSemester()
@@ -82,5 +84,27 @@ public interface Semester extends EObject {
 	 * @generated
 	 */
 	EList<CourseSlot> getCourseSlots();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see universityStudies.UniversityStudiesPackage#getSemester_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link universityStudies.Semester#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Semester

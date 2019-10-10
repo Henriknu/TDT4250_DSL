@@ -62,7 +62,6 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 			case UniversityStudiesPackage.SPECIALIZATION: return createSpecialization();
 			case UniversityStudiesPackage.SEMESTER: return createSemester();
 			case UniversityStudiesPackage.DEPARTMENT: return createDepartment();
-			case UniversityStudiesPackage.COURSE_SLOT: return createCourseSlot();
 			case UniversityStudiesPackage.MANDATORY_COURSE_SLOT: return createMandatoryCourseSlot();
 			case UniversityStudiesPackage.ELECTIVE_COURSE_SLOT: return createElectiveCourseSlot();
 			default:
@@ -152,16 +151,6 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	public Department createDepartment() {
 		DepartmentImpl department = new DepartmentImpl();
 		return department;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CourseSlot createCourseSlot() {
-		CourseSlotImpl courseSlot = new CourseSlotImpl();
-		return courseSlot;
 	}
 
 	/**

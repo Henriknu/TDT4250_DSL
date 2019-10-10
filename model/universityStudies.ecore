@@ -19,7 +19,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="ValidYears"/>
+      <details key="constraints" value="validNumberOfSemesters"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfSemesters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"

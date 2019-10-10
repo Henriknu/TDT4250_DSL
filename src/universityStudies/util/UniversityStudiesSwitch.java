@@ -84,23 +84,37 @@ public class UniversityStudiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UniversityStudiesPackage.STUDY_PLAN: {
-				StudyPlan studyPlan = (StudyPlan)theEObject;
-				T result = caseStudyPlan(studyPlan);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case UniversityStudiesPackage.SEMESTER: {
 				Semester semester = (Semester)theEObject;
 				T result = caseSemester(semester);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UniversityStudiesPackage.RESULT: {
-				Result result = (Result)theEObject;
-				T theResult = caseResult(result);
-				if (theResult == null) theResult = defaultCase(theEObject);
-				return theResult;
+			case UniversityStudiesPackage.DEPARTMENT: {
+				Department department = (Department)theEObject;
+				T result = caseDepartment(department);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UniversityStudiesPackage.COURSE_SLOT: {
+				CourseSlot courseSlot = (CourseSlot)theEObject;
+				T result = caseCourseSlot(courseSlot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UniversityStudiesPackage.MANDATORY_COURSE_SLOT: {
+				MandatoryCourseSlot mandatoryCourseSlot = (MandatoryCourseSlot)theEObject;
+				T result = caseMandatoryCourseSlot(mandatoryCourseSlot);
+				if (result == null) result = caseCourseSlot(mandatoryCourseSlot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UniversityStudiesPackage.ELECTIVE_COURSE_SLOT: {
+				ElectiveCourseSlot electiveCourseSlot = (ElectiveCourseSlot)theEObject;
+				T result = caseElectiveCourseSlot(electiveCourseSlot);
+				if (result == null) result = caseCourseSlot(electiveCourseSlot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
@@ -152,21 +166,6 @@ public class UniversityStudiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Study Plan</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Study Plan</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStudyPlan(StudyPlan object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -182,17 +181,62 @@ public class UniversityStudiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Result</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Department</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Result</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Department</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseResult(Result object) {
+	public T caseDepartment(Department object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Course Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Course Slot</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCourseSlot(CourseSlot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Course Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mandatory Course Slot</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMandatoryCourseSlot(MandatoryCourseSlot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Elective Course Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Elective Course Slot</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElectiveCourseSlot(ElectiveCourseSlot object) {
 		return null;
 	}
 

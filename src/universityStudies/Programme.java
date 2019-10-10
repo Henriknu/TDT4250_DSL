@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getProgramme()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidYears'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='validNumberOfSemesters'"
  * @generated
  */
 public interface Programme extends EObject {
@@ -49,6 +49,40 @@ public interface Programme extends EObject {
 	 * @generated
 	 */
 	void setNumberOfSemesters(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Specializations</b></em>' containment reference list.
+	 * The list contents are of type {@link universityStudies.Specialization}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specializations</em>' containment reference list.
+	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Specializations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Specialization> getSpecializations();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link universityStudies.Programme#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
@@ -110,39 +144,5 @@ public interface Programme extends EObject {
 	 * @generated
 	 */
 	void setProgrammeType(programmeType value);
-
-	/**
-	 * Returns the value of the '<em><b>Specializations</b></em>' containment reference list.
-	 * The list contents are of type {@link universityStudies.Specialization}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specializations</em>' containment reference list.
-	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Specializations()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Specialization> getSpecializations();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link universityStudies.Programme#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 } // Programme
