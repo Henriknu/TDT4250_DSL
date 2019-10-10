@@ -5,12 +5,16 @@ package universityStudies.impl;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import universityStudies.Course;
 import universityStudies.Specialization;
 import universityStudies.UniversityStudiesPackage;
@@ -52,7 +56,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFurtherSpecializations() <em>Further Specializations</em>}' reference list.
+	 * The cached value of the '{@link #getFurtherSpecializations() <em>Further Specializations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFurtherSpecializations()
@@ -118,7 +122,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Specialization> getFurtherSpecializations() {
 		if (furtherSpecializations == null) {
-			furtherSpecializations = new EObjectResolvingEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS);
+			furtherSpecializations = new EObjectContainmentEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS);
 		}
 		return furtherSpecializations;
 	}
@@ -133,6 +137,20 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			courses = new EObjectResolvingEList<Course>(Course.class, this, UniversityStudiesPackage.SPECIALIZATION__COURSES);
 		}
 		return courses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
+				return ((InternalEList<?>)getFurtherSpecializations()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

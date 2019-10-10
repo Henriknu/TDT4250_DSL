@@ -6,15 +6,20 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import universityStudies.Course;
 import universityStudies.Programme;
+import universityStudies.Semester;
 import universityStudies.Specialization;
 import universityStudies.UniversityStudiesPackage;
 
@@ -27,11 +32,12 @@ import universityStudies.UniversityStudiesPackage;
  * </p>
  * <ul>
  *   <li>{@link universityStudies.impl.ProgrammeImpl#getYears <em>Years</em>}</li>
- *   <li>{@link universityStudies.impl.ProgrammeImpl#getSemesters <em>Semesters</em>}</li>
+ *   <li>{@link universityStudies.impl.ProgrammeImpl#getNumberOfSemesters <em>Number Of Semesters</em>}</li>
  *   <li>{@link universityStudies.impl.ProgrammeImpl#getCourses <em>Courses</em>}</li>
  *   <li>{@link universityStudies.impl.ProgrammeImpl#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link universityStudies.impl.ProgrammeImpl#getName <em>Name</em>}</li>
  *   <li>{@link universityStudies.impl.ProgrammeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link universityStudies.impl.ProgrammeImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,24 +64,24 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected int years = YEARS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSemesters() <em>Semesters</em>}' attribute.
+	 * The default value of the '{@link #getNumberOfSemesters() <em>Number Of Semesters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSemesters()
+	 * @see #getNumberOfSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int SEMESTERS_EDEFAULT = 0;
+	protected static final int NUMBER_OF_SEMESTERS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' attribute.
+	 * The cached value of the '{@link #getNumberOfSemesters() <em>Number Of Semesters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSemesters()
+	 * @see #getNumberOfSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected int semesters = SEMESTERS_EDEFAULT;
+	protected int numberOfSemesters = NUMBER_OF_SEMESTERS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
@@ -88,7 +94,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected EList<Course> courses;
 
 	/**
-	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' reference list.
+	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSpecializations()
@@ -138,6 +144,16 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected String type = TYPE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemesters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Semester> semesters;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -182,7 +198,31 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getSemesters() {
+	public int getNumberOfSemesters() {
+		return numberOfSemesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumberOfSemesters(int newNumberOfSemesters) {
+		int oldNumberOfSemesters = numberOfSemesters;
+		numberOfSemesters = newNumberOfSemesters;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.PROGRAMME__NUMBER_OF_SEMESTERS, oldNumberOfSemesters, numberOfSemesters));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Semester> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, UniversityStudiesPackage.PROGRAMME__SEMESTERS);
+		}
 		return semesters;
 	}
 
@@ -191,11 +231,15 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSemesters(int newSemesters) {
-		int oldSemesters = semesters;
-		semesters = newSemesters;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.PROGRAMME__SEMESTERS, oldSemesters, semesters));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
+				return ((InternalEList<?>)getSpecializations()).basicRemove(otherEnd, msgs);
+			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -217,7 +261,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 */
 	public EList<Specialization> getSpecializations() {
 		if (specializations == null) {
-			specializations = new EObjectResolvingEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS);
+			specializations = new EObjectContainmentEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS);
 		}
 		return specializations;
 	}
@@ -274,8 +318,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		switch (featureID) {
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
 				return getYears();
-			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
-				return getSemesters();
+			case UniversityStudiesPackage.PROGRAMME__NUMBER_OF_SEMESTERS:
+				return getNumberOfSemesters();
 			case UniversityStudiesPackage.PROGRAMME__COURSES:
 				return getCourses();
 			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
@@ -284,6 +328,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return getName();
 			case UniversityStudiesPackage.PROGRAMME__TYPE:
 				return getType();
+			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
+				return getSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -300,8 +346,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
 				setYears((Integer)newValue);
 				return;
-			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
-				setSemesters((Integer)newValue);
+			case UniversityStudiesPackage.PROGRAMME__NUMBER_OF_SEMESTERS:
+				setNumberOfSemesters((Integer)newValue);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__COURSES:
 				getCourses().clear();
@@ -316,6 +362,10 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return;
 			case UniversityStudiesPackage.PROGRAMME__TYPE:
 				setType((String)newValue);
+				return;
+			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semester>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,8 +382,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
 				setYears(YEARS_EDEFAULT);
 				return;
-			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
-				setSemesters(SEMESTERS_EDEFAULT);
+			case UniversityStudiesPackage.PROGRAMME__NUMBER_OF_SEMESTERS:
+				setNumberOfSemesters(NUMBER_OF_SEMESTERS_EDEFAULT);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__COURSES:
 				getCourses().clear();
@@ -346,6 +396,9 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return;
 			case UniversityStudiesPackage.PROGRAMME__TYPE:
 				setType(TYPE_EDEFAULT);
+				return;
+			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
+				getSemesters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,8 +414,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		switch (featureID) {
 			case UniversityStudiesPackage.PROGRAMME__YEARS:
 				return years != YEARS_EDEFAULT;
-			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
-				return semesters != SEMESTERS_EDEFAULT;
+			case UniversityStudiesPackage.PROGRAMME__NUMBER_OF_SEMESTERS:
+				return numberOfSemesters != NUMBER_OF_SEMESTERS_EDEFAULT;
 			case UniversityStudiesPackage.PROGRAMME__COURSES:
 				return courses != null && !courses.isEmpty();
 			case UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS:
@@ -371,6 +424,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case UniversityStudiesPackage.PROGRAMME__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case UniversityStudiesPackage.PROGRAMME__SEMESTERS:
+				return semesters != null && !semesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,8 +442,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (years: ");
 		result.append(years);
-		result.append(", semesters: ");
-		result.append(semesters);
+		result.append(", numberOfSemesters: ");
+		result.append(numberOfSemesters);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", type: ");

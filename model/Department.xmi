@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<universityStudies:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:universityStudies="http://www.example.org/universityStudies"
+    xsi:schemaLocation="http://www.example.org/universityStudies universityStudies.ecore">
+  <Courses name="Advanced Software Design"
+      code="TDT4250"
+      credits="7.5"
+      level="3"/>
+  <Courses name="Software Architecture"
+      code="TDT4240"
+      credits="7.5"
+      level="2"/>
+  <Courses name="Customer Driven Project"
+      code="TDT4290"
+      credits="15.0"
+      level="3"/>
+  <Courses name="Matematikk 1"
+      code="TMA4100"/>
+  <Courses name="ITGK"
+      code="TDT4110"/>
+  <Courses name="Diskret Matematikk"
+      code="TMA4140"/>
+  <Courses name="Filosofi-og vitenskapsteori"
+      code="EXPH0001"/>
+  <Courses name="Objecktorientert programmering"
+      code="TDT4100"/>
+  <Courses name="Algoritmer og datastrukturer"
+      code="TDT4120"/>
+  <Courses name="Programvareutvikling"
+      code="TDT4140"/>
+  <Courses name="Intoduksjon til kunstig intelligens"
+      code="TDT4120"/>
+  <Courses name="Informasjonssystemer"
+      code="TDT4175"/>
+  <Programmes
+      numberOfSemesters="10"
+      name="MTDT"
+      programmeType="Integrert Master">
+    <specializations
+        name="Programvare Systemer">
+      <furtherSpecializations
+          name="Programvareutvikling"/>
+      <furtherSpecializations
+          name="Interaksjonsdesign og spillutvikling"/>
+      <furtherSpecializations
+          name="Digital virksomhetsutvikling"/>
+    </specializations>
+    <specializations
+        name="Kunstig intelligens"/>
+  </Programmes>
+</universityStudies:Department>

@@ -15,11 +15,13 @@
     </genClasses>
     <genClasses ecoreClass="universityStudies.ecore#//Programme">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Programme/years"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Programme/semesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Programme/numberOfSemesters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Programme/courses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Programme/specializations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Programme/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Programme/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference universityStudies.ecore#//Programme/semesters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Programme/%"/>
     </genClasses>
     <genClasses ecoreClass="universityStudies.ecore#//Specialization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Specialization/name"/>
@@ -46,6 +48,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Result/candidateNr"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Result/course"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Result/semester"/>
+    </genClasses>
+    <genClasses ecoreClass="universityStudies.ecore#//Department">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Department/Courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference universityStudies.ecore#//Department/Programmes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

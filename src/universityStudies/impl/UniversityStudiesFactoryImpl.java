@@ -62,6 +62,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 			case UniversityStudiesPackage.STUDY_PLAN: return createStudyPlan();
 			case UniversityStudiesPackage.SEMESTER: return createSemester();
 			case UniversityStudiesPackage.RESULT: return createResult();
+			case UniversityStudiesPackage.DEPARTMENT: return createDepartment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +126,16 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	public Result createResult() {
 		ResultImpl result = new ResultImpl();
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Department createDepartment() {
+		DepartmentImpl department = new DepartmentImpl();
+		return department;
 	}
 
 	/**

@@ -47,13 +47,13 @@ public interface Specialization extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Further Specializations</b></em>' reference list.
+	 * Returns the value of the '<em><b>Further Specializations</b></em>' containment reference list.
 	 * The list contents are of type {@link universityStudies.Specialization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Further Specializations</em>' reference list.
+	 * @return the value of the '<em>Further Specializations</em>' containment reference list.
 	 * @see universityStudies.UniversityStudiesPackage#getSpecialization_FurtherSpecializations()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Specialization> getFurtherSpecializations();

@@ -16,11 +16,12 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link universityStudies.Programme#getYears <em>Years</em>}</li>
- *   <li>{@link universityStudies.Programme#getSemesters <em>Semesters</em>}</li>
+ *   <li>{@link universityStudies.Programme#getNumberOfSemesters <em>Number Of Semesters</em>}</li>
  *   <li>{@link universityStudies.Programme#getCourses <em>Courses</em>}</li>
  *   <li>{@link universityStudies.Programme#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link universityStudies.Programme#getName <em>Name</em>}</li>
  *   <li>{@link universityStudies.Programme#getType <em>Type</em>}</li>
+ *   <li>{@link universityStudies.Programme#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getProgramme()
@@ -51,26 +52,38 @@ public interface Programme extends EObject {
 	void setYears(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Semesters</b></em>' attribute.
+	 * Returns the value of the '<em><b>Number Of Semesters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semesters</em>' attribute.
-	 * @see #setSemesters(int)
-	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Semesters()
+	 * @return the value of the '<em>Number Of Semesters</em>' attribute.
+	 * @see #setNumberOfSemesters(int)
+	 * @see universityStudies.UniversityStudiesPackage#getProgramme_NumberOfSemesters()
 	 * @model
 	 * @generated
 	 */
-	int getSemesters();
+	int getNumberOfSemesters();
 
 	/**
-	 * Sets the value of the '{@link universityStudies.Programme#getSemesters <em>Semesters</em>}' attribute.
+	 * Sets the value of the '{@link universityStudies.Programme#getNumberOfSemesters <em>Number Of Semesters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semesters</em>' attribute.
-	 * @see #getSemesters()
+	 * @param value the new value of the '<em>Number Of Semesters</em>' attribute.
+	 * @see #getNumberOfSemesters()
 	 * @generated
 	 */
-	void setSemesters(int value);
+	void setNumberOfSemesters(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link universityStudies.Semester}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semesters</em>' containment reference list.
+	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Semesters()
+	 * @model containment="true" lower="2" upper="10"
+	 * @generated
+	 */
+	EList<Semester> getSemesters();
 
 	/**
 	 * Returns the value of the '<em><b>Courses</b></em>' reference list.
@@ -85,13 +98,13 @@ public interface Programme extends EObject {
 	EList<Course> getCourses();
 
 	/**
-	 * Returns the value of the '<em><b>Specializations</b></em>' reference list.
+	 * Returns the value of the '<em><b>Specializations</b></em>' containment reference list.
 	 * The list contents are of type {@link universityStudies.Specialization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specializations</em>' reference list.
+	 * @return the value of the '<em>Specializations</em>' containment reference list.
 	 * @see universityStudies.UniversityStudiesPackage#getProgramme_Specializations()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Specialization> getSpecializations();
