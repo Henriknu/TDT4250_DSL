@@ -62,6 +62,7 @@ public abstract class CourseSlotImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Course getCourse() {
 		if (course != null && course.eIsProxy()) {
 			InternalEObject oldCourse = (InternalEObject)course;
@@ -88,6 +89,7 @@ public abstract class CourseSlotImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCourse(Course newCourse) {
 		Course oldCourse = course;
 		course = newCourse;

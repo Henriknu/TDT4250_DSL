@@ -82,6 +82,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Course> getCourses() {
 		if (courses == null) {
 			courses = new EObjectContainmentEList<Course>(Course.class, this, UniversityStudiesPackage.DEPARTMENT__COURSES);
@@ -94,6 +95,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Programme getProgrammes() {
 		return programmes;
 	}
@@ -118,6 +120,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProgrammes(Programme newProgrammes) {
 		if (newProgrammes != programmes) {
 			NotificationChain msgs = null;

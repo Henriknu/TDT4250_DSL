@@ -154,6 +154,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -163,6 +164,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -175,6 +177,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -184,6 +187,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -196,6 +200,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getCredits() {
 		return credits;
 	}
@@ -205,6 +210,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCredits(float newCredits) {
 		float oldCredits = credits;
 		credits = newCredits;
@@ -217,6 +223,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getLevel() {
 		return level;
 	}
@@ -226,6 +233,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLevel(int newLevel) {
 		int oldLevel = level;
 		level = newLevel;
@@ -238,6 +246,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Programme> getProgrammes() {
 		if (programmes == null) {
 			programmes = new EObjectContainmentEList<Programme>(Programme.class, this, UniversityStudiesPackage.COURSE__PROGRAMMES);

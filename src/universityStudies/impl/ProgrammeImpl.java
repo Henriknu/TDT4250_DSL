@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import universityStudies.Department;
 import universityStudies.Programme;
+import universityStudies.ProgrammeType;
 import universityStudies.Semester;
 import universityStudies.Specialization;
 import universityStudies.UniversityStudiesPackage;
-import universityStudies.programmeType;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,7 +113,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final programmeType PROGRAMME_TYPE_EDEFAULT = programmeType.BACHELOR;
+	protected static final ProgrammeType PROGRAMME_TYPE_EDEFAULT = ProgrammeType.BACHELOR;
 
 	/**
 	 * The cached value of the '{@link #getProgrammeType() <em>Programme Type</em>}' attribute.
@@ -123,7 +123,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @generated
 	 * @ordered
 	 */
-	protected programmeType programmeType = PROGRAMME_TYPE_EDEFAULT;
+	protected ProgrammeType programmeType = PROGRAMME_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +149,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNumberOfSemesters() {
 		return numberOfSemesters;
 	}
@@ -158,6 +159,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNumberOfSemesters(int newNumberOfSemesters) {
 		int oldNumberOfSemesters = numberOfSemesters;
 		numberOfSemesters = newNumberOfSemesters;
@@ -170,6 +172,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Specialization> getSpecializations() {
 		if (specializations == null) {
 			specializations = new EObjectContainmentEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.PROGRAMME__SPECIALIZATIONS);
@@ -182,6 +185,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -191,6 +195,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -203,6 +208,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Semester> getSemesters() {
 		if (semesters == null) {
 			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, UniversityStudiesPackage.PROGRAMME__SEMESTERS);
@@ -215,6 +221,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Department getDepartment() {
 		if (eContainerFeatureID() != UniversityStudiesPackage.PROGRAMME__DEPARTMENT) return null;
 		return (Department)eInternalContainer();
@@ -235,6 +242,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDepartment(Department newDepartment) {
 		if (newDepartment != eInternalContainer() || (eContainerFeatureID() != UniversityStudiesPackage.PROGRAMME__DEPARTMENT && newDepartment != null)) {
 			if (EcoreUtil.isAncestor(this, newDepartment))
@@ -256,7 +264,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public programmeType getProgrammeType() {
+	@Override
+	public ProgrammeType getProgrammeType() {
 		return programmeType;
 	}
 
@@ -265,8 +274,9 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProgrammeType(programmeType newProgrammeType) {
-		programmeType oldProgrammeType = programmeType;
+	@Override
+	public void setProgrammeType(ProgrammeType newProgrammeType) {
+		ProgrammeType oldProgrammeType = programmeType;
 		programmeType = newProgrammeType == null ? PROGRAMME_TYPE_EDEFAULT : newProgrammeType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.PROGRAMME__PROGRAMME_TYPE, oldProgrammeType, programmeType));
@@ -371,7 +381,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				setDepartment((Department)newValue);
 				return;
 			case UniversityStudiesPackage.PROGRAMME__PROGRAMME_TYPE:
-				setProgrammeType((programmeType)newValue);
+				setProgrammeType((ProgrammeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

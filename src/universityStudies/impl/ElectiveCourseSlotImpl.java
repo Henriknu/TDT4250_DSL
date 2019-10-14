@@ -62,6 +62,7 @@ public class ElectiveCourseSlotImpl extends CourseSlotImpl implements ElectiveCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Course> getOptionalCourses() {
 		if (optionalCourses == null) {
 			optionalCourses = new EObjectResolvingEList<Course>(Course.class, this, UniversityStudiesPackage.ELECTIVE_COURSE_SLOT__OPTIONAL_COURSES);

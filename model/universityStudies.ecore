@@ -29,7 +29,7 @@
         eType="#//Semester" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Department" eType="#//Department"
         eOpposite="#//Department/Programmes"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="programmeType" eType="#//programmeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="programmeType" eType="#//ProgrammeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -54,7 +54,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Programmes" eType="#//Programme"
         containment="true" eOpposite="#//Programme/Department"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="programmeType">
+  <eClassifiers xsi:type="ecore:EEnum" name="ProgrammeType">
     <eLiterals name="Bachelor" value="6"/>
     <eLiterals name="Master" value="4"/>
     <eLiterals name="IntegrertMaster" value="10"/>
@@ -71,5 +71,8 @@
   <eClassifiers xsi:type="ecore:EEnum" name="seasons">
     <eLiterals name="Fall"/>
     <eLiterals name="Spring" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="credits">
+    <eLiterals name="Basic" literal="7.5"/>
   </eClassifiers>
 </ecore:EPackage>

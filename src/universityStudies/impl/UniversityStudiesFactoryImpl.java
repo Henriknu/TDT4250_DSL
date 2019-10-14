@@ -78,9 +78,11 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
 			case UniversityStudiesPackage.PROGRAMME_TYPE:
-				return createprogrammeTypeFromString(eDataType, initialValue);
+				return createProgrammeTypeFromString(eDataType, initialValue);
 			case UniversityStudiesPackage.SEASONS:
 				return createseasonsFromString(eDataType, initialValue);
+			case UniversityStudiesPackage.CREDITS:
+				return createcreditsFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,9 +97,11 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 			case UniversityStudiesPackage.PROGRAMME_TYPE:
-				return convertprogrammeTypeToString(eDataType, instanceValue);
+				return convertProgrammeTypeToString(eDataType, instanceValue);
 			case UniversityStudiesPackage.SEASONS:
 				return convertseasonsToString(eDataType, instanceValue);
+			case UniversityStudiesPackage.CREDITS:
+				return convertcreditsToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +112,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Course createCourse() {
 		CourseImpl course = new CourseImpl();
 		return course;
@@ -118,6 +123,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Programme createProgramme() {
 		ProgrammeImpl programme = new ProgrammeImpl();
 		return programme;
@@ -128,6 +134,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Specialization createSpecialization() {
 		SpecializationImpl specialization = new SpecializationImpl();
 		return specialization;
@@ -138,6 +145,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Semester createSemester() {
 		SemesterImpl semester = new SemesterImpl();
 		return semester;
@@ -148,6 +156,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Department createDepartment() {
 		DepartmentImpl department = new DepartmentImpl();
 		return department;
@@ -158,6 +167,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MandatoryCourseSlot createMandatoryCourseSlot() {
 		MandatoryCourseSlotImpl mandatoryCourseSlot = new MandatoryCourseSlotImpl();
 		return mandatoryCourseSlot;
@@ -168,6 +178,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ElectiveCourseSlot createElectiveCourseSlot() {
 		ElectiveCourseSlotImpl electiveCourseSlot = new ElectiveCourseSlotImpl();
 		return electiveCourseSlot;
@@ -178,8 +189,8 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public programmeType createprogrammeTypeFromString(EDataType eDataType, String initialValue) {
-		programmeType result = programmeType.get(initialValue);
+	public ProgrammeType createProgrammeTypeFromString(EDataType eDataType, String initialValue) {
+		ProgrammeType result = ProgrammeType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -189,7 +200,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertprogrammeTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertProgrammeTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -218,6 +229,27 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public credits createcreditsFromString(EDataType eDataType, String initialValue) {
+		credits result = credits.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertcreditsToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UniversityStudiesPackage getUniversityStudiesPackage() {
 		return (UniversityStudiesPackage)getEPackage();
 	}

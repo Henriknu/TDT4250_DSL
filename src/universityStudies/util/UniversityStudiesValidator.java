@@ -103,9 +103,11 @@ public class UniversityStudiesValidator extends EObjectValidator {
 			case UniversityStudiesPackage.ELECTIVE_COURSE_SLOT:
 				return validateElectiveCourseSlot((ElectiveCourseSlot)value, diagnostics, context);
 			case UniversityStudiesPackage.PROGRAMME_TYPE:
-				return validateprogrammeType((programmeType)value, diagnostics, context);
+				return validateProgrammeType((ProgrammeType)value, diagnostics, context);
 			case UniversityStudiesPackage.SEASONS:
 				return validateseasons((seasons)value, diagnostics, context);
+			case UniversityStudiesPackage.CREDITS:
+				return validatecredits((credits)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -395,7 +397,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateprogrammeType(programmeType programmeType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateProgrammeType(ProgrammeType programmeType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -405,6 +407,15 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateseasons(seasons seasons, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatecredits(credits credits, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

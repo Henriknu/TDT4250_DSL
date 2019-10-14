@@ -134,6 +134,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public seasons getSeason() {
 		return season;
 	}
@@ -143,6 +144,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSeason(seasons newSeason) {
 		seasons oldSeason = season;
 		season = newSeason == null ? SEASON_EDEFAULT : newSeason;
@@ -155,6 +157,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getSemesterNumber() {
 		return semesterNumber;
 	}
@@ -164,6 +167,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSemesterNumber(int newSemesterNumber) {
 		int oldSemesterNumber = semesterNumber;
 		semesterNumber = newSemesterNumber;
@@ -176,6 +180,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CourseSlot> getCourseSlots() {
 		if (courseSlots == null) {
 			courseSlots = new EObjectContainmentEList<CourseSlot>(CourseSlot.class, this, UniversityStudiesPackage.SEMESTER__COURSE_SLOTS);
@@ -188,6 +193,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -197,6 +203,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

@@ -499,11 +499,11 @@ public interface UniversityStudiesPackage extends EPackage {
 	int ELECTIVE_COURSE_SLOT_OPERATION_COUNT = COURSE_SLOT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link universityStudies.programmeType <em>programme Type</em>}' enum.
+	 * The meta object id for the '{@link universityStudies.ProgrammeType <em>Programme Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see universityStudies.programmeType
-	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getprogrammeType()
+	 * @see universityStudies.ProgrammeType
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getProgrammeType()
 	 * @generated
 	 */
 	int PROGRAMME_TYPE = 8;
@@ -517,6 +517,17 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	int SEASONS = 9;
+
+
+	/**
+	 * The meta object id for the '{@link universityStudies.credits <em>credits</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see universityStudies.credits
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getcredits()
+	 * @generated
+	 */
+	int CREDITS = 10;
 
 
 	/**
@@ -842,14 +853,14 @@ public interface UniversityStudiesPackage extends EPackage {
 	EReference getElectiveCourseSlot_OptionalCourses();
 
 	/**
-	 * Returns the meta object for enum '{@link universityStudies.programmeType <em>programme Type</em>}'.
+	 * Returns the meta object for enum '{@link universityStudies.ProgrammeType <em>Programme Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>programme Type</em>'.
-	 * @see universityStudies.programmeType
+	 * @return the meta object for enum '<em>Programme Type</em>'.
+	 * @see universityStudies.ProgrammeType
 	 * @generated
 	 */
-	EEnum getprogrammeType();
+	EEnum getProgrammeType();
 
 	/**
 	 * Returns the meta object for enum '{@link universityStudies.seasons <em>seasons</em>}'.
@@ -860,6 +871,16 @@ public interface UniversityStudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getseasons();
+
+	/**
+	 * Returns the meta object for enum '{@link universityStudies.credits <em>credits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>credits</em>'.
+	 * @see universityStudies.credits
+	 * @generated
+	 */
+	EEnum getcredits();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1141,14 +1162,14 @@ public interface UniversityStudiesPackage extends EPackage {
 		EReference ELECTIVE_COURSE_SLOT__OPTIONAL_COURSES = eINSTANCE.getElectiveCourseSlot_OptionalCourses();
 
 		/**
-		 * The meta object literal for the '{@link universityStudies.programmeType <em>programme Type</em>}' enum.
+		 * The meta object literal for the '{@link universityStudies.ProgrammeType <em>Programme Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see universityStudies.programmeType
-		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getprogrammeType()
+		 * @see universityStudies.ProgrammeType
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getProgrammeType()
 		 * @generated
 		 */
-		EEnum PROGRAMME_TYPE = eINSTANCE.getprogrammeType();
+		EEnum PROGRAMME_TYPE = eINSTANCE.getProgrammeType();
 
 		/**
 		 * The meta object literal for the '{@link universityStudies.seasons <em>seasons</em>}' enum.
@@ -1159,6 +1180,16 @@ public interface UniversityStudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SEASONS = eINSTANCE.getseasons();
+
+		/**
+		 * The meta object literal for the '{@link universityStudies.credits <em>credits</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see universityStudies.credits
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getcredits()
+		 * @generated
+		 */
+		EEnum CREDITS = eINSTANCE.getcredits();
 
 	}
 

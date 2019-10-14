@@ -17,11 +17,12 @@ import universityStudies.Department;
 import universityStudies.ElectiveCourseSlot;
 import universityStudies.MandatoryCourseSlot;
 import universityStudies.Programme;
+import universityStudies.ProgrammeType;
 import universityStudies.Semester;
 import universityStudies.Specialization;
 import universityStudies.UniversityStudiesFactory;
 import universityStudies.UniversityStudiesPackage;
-import universityStudies.programmeType;
+import universityStudies.credits;
 import universityStudies.seasons;
 
 import universityStudies.util.UniversityStudiesValidator;
@@ -104,6 +105,13 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	private EEnum seasonsEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum creditsEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -160,6 +168,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		EValidator.Registry.INSTANCE.put
 			(theUniversityStudiesPackage,
 			 new EValidator.Descriptor() {
+				 @Override
 				 public EValidator getEValidator() {
 					 return UniversityStudiesValidator.INSTANCE;
 				 }
@@ -178,6 +187,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCourse() {
 		return courseEClass;
 	}
@@ -187,6 +197,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourse_Name() {
 		return (EAttribute)courseEClass.getEStructuralFeatures().get(0);
 	}
@@ -196,6 +207,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourse_Code() {
 		return (EAttribute)courseEClass.getEStructuralFeatures().get(1);
 	}
@@ -205,6 +217,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourse_Credits() {
 		return (EAttribute)courseEClass.getEStructuralFeatures().get(2);
 	}
@@ -214,6 +227,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourse_Level() {
 		return (EAttribute)courseEClass.getEStructuralFeatures().get(3);
 	}
@@ -223,6 +237,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCourse_Programmes() {
 		return (EReference)courseEClass.getEStructuralFeatures().get(4);
 	}
@@ -232,6 +247,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProgramme() {
 		return programmeEClass;
 	}
@@ -241,6 +257,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProgramme_NumberOfSemesters() {
 		return (EAttribute)programmeEClass.getEStructuralFeatures().get(0);
 	}
@@ -250,6 +267,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgramme_Specializations() {
 		return (EReference)programmeEClass.getEStructuralFeatures().get(1);
 	}
@@ -259,6 +277,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProgramme_Name() {
 		return (EAttribute)programmeEClass.getEStructuralFeatures().get(2);
 	}
@@ -268,6 +287,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgramme_Semesters() {
 		return (EReference)programmeEClass.getEStructuralFeatures().get(3);
 	}
@@ -277,6 +297,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgramme_Department() {
 		return (EReference)programmeEClass.getEStructuralFeatures().get(4);
 	}
@@ -286,6 +307,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProgramme_ProgrammeType() {
 		return (EAttribute)programmeEClass.getEStructuralFeatures().get(5);
 	}
@@ -295,6 +317,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSpecialization() {
 		return specializationEClass;
 	}
@@ -304,6 +327,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSpecialization_Name() {
 		return (EAttribute)specializationEClass.getEStructuralFeatures().get(0);
 	}
@@ -313,6 +337,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSpecialization_FurtherSpecializations() {
 		return (EReference)specializationEClass.getEStructuralFeatures().get(1);
 	}
@@ -322,6 +347,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSpecialization_Semesters() {
 		return (EReference)specializationEClass.getEStructuralFeatures().get(2);
 	}
@@ -331,6 +357,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSemester() {
 		return semesterEClass;
 	}
@@ -340,6 +367,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemester_Season() {
 		return (EAttribute)semesterEClass.getEStructuralFeatures().get(0);
 	}
@@ -349,6 +377,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemester_SemesterNumber() {
 		return (EAttribute)semesterEClass.getEStructuralFeatures().get(1);
 	}
@@ -358,6 +387,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemester_CourseSlots() {
 		return (EReference)semesterEClass.getEStructuralFeatures().get(2);
 	}
@@ -367,6 +397,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemester_Name() {
 		return (EAttribute)semesterEClass.getEStructuralFeatures().get(3);
 	}
@@ -376,6 +407,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDepartment() {
 		return departmentEClass;
 	}
@@ -385,6 +417,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDepartment_Courses() {
 		return (EReference)departmentEClass.getEStructuralFeatures().get(0);
 	}
@@ -394,6 +427,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDepartment_Programmes() {
 		return (EReference)departmentEClass.getEStructuralFeatures().get(1);
 	}
@@ -403,6 +437,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCourseSlot() {
 		return courseSlotEClass;
 	}
@@ -412,6 +447,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCourseSlot_Course() {
 		return (EReference)courseSlotEClass.getEStructuralFeatures().get(0);
 	}
@@ -421,6 +457,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMandatoryCourseSlot() {
 		return mandatoryCourseSlotEClass;
 	}
@@ -430,6 +467,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getElectiveCourseSlot() {
 		return electiveCourseSlotEClass;
 	}
@@ -439,6 +477,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getElectiveCourseSlot_OptionalCourses() {
 		return (EReference)electiveCourseSlotEClass.getEStructuralFeatures().get(0);
 	}
@@ -448,7 +487,8 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getprogrammeType() {
+	@Override
+	public EEnum getProgrammeType() {
 		return programmeTypeEEnum;
 	}
 
@@ -457,6 +497,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getseasons() {
 		return seasonsEEnum;
 	}
@@ -466,6 +507,17 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EEnum getcredits() {
+		return creditsEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UniversityStudiesFactory getUniversityStudiesFactory() {
 		return (UniversityStudiesFactory)getEFactoryInstance();
 	}
@@ -530,6 +582,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		// Create enums
 		programmeTypeEEnum = createEEnum(PROGRAMME_TYPE);
 		seasonsEEnum = createEEnum(SEASONS);
+		creditsEEnum = createEEnum(CREDITS);
 	}
 
 	/**
@@ -577,7 +630,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		initEAttribute(getProgramme_Name(), ecorePackage.getEString(), "name", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_Semesters(), this.getSemester(), null, "semesters", null, 0, 10, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_Department(), this.getDepartment(), this.getDepartment_Programmes(), "Department", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProgramme_ProgrammeType(), this.getprogrammeType(), "programmeType", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgramme_ProgrammeType(), this.getProgrammeType(), "programmeType", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpecialization_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -603,15 +656,18 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		initEReference(getElectiveCourseSlot_OptionalCourses(), this.getCourse(), null, "optionalCourses", null, 0, -1, ElectiveCourseSlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(programmeTypeEEnum, programmeType.class, "programmeType");
-		addEEnumLiteral(programmeTypeEEnum, programmeType.BACHELOR);
-		addEEnumLiteral(programmeTypeEEnum, programmeType.MASTER);
-		addEEnumLiteral(programmeTypeEEnum, programmeType.INTEGRERT_MASTER);
-		addEEnumLiteral(programmeTypeEEnum, programmeType.ÅRSSTUDIE);
+		initEEnum(programmeTypeEEnum, ProgrammeType.class, "ProgrammeType");
+		addEEnumLiteral(programmeTypeEEnum, ProgrammeType.BACHELOR);
+		addEEnumLiteral(programmeTypeEEnum, ProgrammeType.MASTER);
+		addEEnumLiteral(programmeTypeEEnum, ProgrammeType.INTEGRERT_MASTER);
+		addEEnumLiteral(programmeTypeEEnum, ProgrammeType.ÅRSSTUDIE);
 
 		initEEnum(seasonsEEnum, seasons.class, "seasons");
 		addEEnumLiteral(seasonsEEnum, seasons.FALL);
 		addEEnumLiteral(seasonsEEnum, seasons.SPRING);
+
+		initEEnum(creditsEEnum, credits.class, "credits");
+		addEEnumLiteral(creditsEEnum, credits.BASIC);
 
 		// Create resource
 		createResource(eNS_URI);

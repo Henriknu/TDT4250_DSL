@@ -10,87 +10,65 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>seasons</b></em>',
+ * A representation of the literals of the enumeration '<em><b>credits</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see universityStudies.UniversityStudiesPackage#getseasons()
+ * @see universityStudies.UniversityStudiesPackage#getcredits()
  * @model
  * @generated
  */
-public enum seasons implements Enumerator {
+public enum credits implements Enumerator {
 	/**
-	 * The '<em><b>Fall</b></em>' literal object.
+	 * The '<em><b>Basic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FALL_VALUE
+	 * @see #BASIC_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	FALL(0, "Fall", "Fall"),
+	BASIC(0, "Basic", "7.5");
 
 	/**
-	 * The '<em><b>Spring</b></em>' literal object.
+	 * The '<em><b>Basic</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SPRING_VALUE
+	 * @see #BASIC
+	 * @model name="Basic" literal="7.5"
 	 * @generated
 	 * @ordered
 	 */
-	SPRING(1, "Spring", "Spring");
+	public static final int BASIC_VALUE = 0;
 
 	/**
-	 * The '<em><b>Fall</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #FALL
-	 * @model name="Fall"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int FALL_VALUE = 0;
-
-	/**
-	 * The '<em><b>Spring</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SPRING
-	 * @model name="Spring"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SPRING_VALUE = 1;
-
-	/**
-	 * An array of all the '<em><b>seasons</b></em>' enumerators.
+	 * An array of all the '<em><b>credits</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final seasons[] VALUES_ARRAY =
-		new seasons[] {
-			FALL,
-			SPRING,
+	private static final credits[] VALUES_ARRAY =
+		new credits[] {
+			BASIC,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>seasons</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>credits</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<seasons> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<credits> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>seasons</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>credits</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static seasons get(String literal) {
+	public static credits get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			seasons result = VALUES_ARRAY[i];
+			credits result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -99,16 +77,16 @@ public enum seasons implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>seasons</b></em>' literal with the specified name.
+	 * Returns the '<em><b>credits</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static seasons getByName(String name) {
+	public static credits getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			seasons result = VALUES_ARRAY[i];
+			credits result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -117,17 +95,16 @@ public enum seasons implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>seasons</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>credits</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static seasons get(int value) {
+	public static credits get(int value) {
 		switch (value) {
-			case FALL_VALUE: return FALL;
-			case SPRING_VALUE: return SPRING;
+			case BASIC_VALUE: return BASIC;
 		}
 		return null;
 	}
@@ -159,7 +136,7 @@ public enum seasons implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private seasons(int value, String name, String literal) {
+	private credits(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -206,4 +183,4 @@ public enum seasons implements Enumerator {
 		return literal;
 	}
 	
-} //seasons
+} //credits

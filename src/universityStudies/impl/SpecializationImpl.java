@@ -102,6 +102,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -111,6 +112,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -123,6 +125,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Specialization> getFurtherSpecializations() {
 		if (furtherSpecializations == null) {
 			furtherSpecializations = new EObjectContainmentEList<Specialization>(Specialization.class, this, UniversityStudiesPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS);
@@ -135,6 +138,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Semester> getSemesters() {
 		if (semesters == null) {
 			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, UniversityStudiesPackage.SPECIALIZATION__SEMESTERS);

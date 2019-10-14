@@ -122,27 +122,27 @@ public interface Programme extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Programme Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link universityStudies.programmeType}.
+	 * The literals are from the enumeration {@link universityStudies.ProgrammeType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Programme Type</em>' attribute.
-	 * @see universityStudies.programmeType
-	 * @see #setProgrammeType(programmeType)
+	 * @see universityStudies.ProgrammeType
+	 * @see #setProgrammeType(ProgrammeType)
 	 * @see universityStudies.UniversityStudiesPackage#getProgramme_ProgrammeType()
 	 * @model
 	 * @generated
 	 */
-	programmeType getProgrammeType();
+	ProgrammeType getProgrammeType();
 
 	/**
 	 * Sets the value of the '{@link universityStudies.Programme#getProgrammeType <em>Programme Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Programme Type</em>' attribute.
-	 * @see universityStudies.programmeType
+	 * @see universityStudies.ProgrammeType
 	 * @see #getProgrammeType()
 	 * @generated
 	 */
-	void setProgrammeType(programmeType value);
+	void setProgrammeType(ProgrammeType value);
 
 } // Programme
