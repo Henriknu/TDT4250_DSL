@@ -18,6 +18,9 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="universityStudies.ecore#//Credits">
       <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Credits/Basic"/>
+      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Credits/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Credits/Full"/>
+      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Credits/Minor"/>
     </genEnums>
     <genClasses ecoreClass="universityStudies.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Course/name"/>

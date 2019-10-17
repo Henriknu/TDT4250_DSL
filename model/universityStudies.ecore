@@ -40,7 +40,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="isValidSeason CourseNotNull EnoughPoints"/>
+      <details key="constraints" value="isValidSeason courseNotNull enoughPoints"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="courseNotNull" value="self.courseSlots.course -> notEmpty()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="#//Seasons"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

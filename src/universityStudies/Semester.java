@@ -22,7 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getSemester()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='isValidSeason CourseNotNull EnoughPoints'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='isValidSeason courseNotNull enoughPoints'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL courseNotNull='self.courseSlots.course -&gt; notEmpty()'"
  * @generated
  */
 public interface Semester extends EObject {

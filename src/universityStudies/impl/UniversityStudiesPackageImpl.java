@@ -667,6 +667,9 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 
 		initEEnum(creditsEEnum, Credits.class, "Credits");
 		addEEnumLiteral(creditsEEnum, Credits.BASIC);
+		addEEnumLiteral(creditsEEnum, Credits.DOUBLE);
+		addEEnumLiteral(creditsEEnum, Credits.FULL);
+		addEEnumLiteral(creditsEEnum, Credits.MINOR);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -674,6 +677,8 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -706,7 +711,23 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		  (semesterEClass,
 		   source,
 		   new String[] {
-			   "constraints", "isValidSeason CourseNotNull EnoughPoints"
+			   "constraints", "isValidSeason courseNotNull enoughPoints"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (semesterEClass,
+		   source,
+		   new String[] {
+			   "courseNotNull", "self.courseSlots.course -> notEmpty()"
 		   });
 	}
 

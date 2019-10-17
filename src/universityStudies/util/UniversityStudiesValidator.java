@@ -392,8 +392,8 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSemester_isValidSeason(semester, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSemester_CourseNotNull(semester, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSemester_EnoughPoints(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_courseNotNull(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_enoughPoints(semester, diagnostics, context);
 		return result;
 	}
 
@@ -401,14 +401,14 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * Validates the isValidSeason constraint of '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	public boolean validateSemester_isValidSeason(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (isValidSeason(semester)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -424,19 +424,57 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		}
 		return true;
 	}
+	
+	private boolean isValidSeason(Semester semester) {
+		for(Seasons season : Seasons.VALUES) {
+			if (season.getName() == semester.getSeason().getName()){
+				return false;
+			}
+		}
+		return true;
+	}
 
 	/**
-	 * Validates the CourseNotNull constraint of '<em>Semester</em>'.
+	 * The cached validation expression for the courseNotNull constraint of '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSemester_CourseNotNull(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	protected static final String SEMESTER__COURSE_NOT_NULL__EEXPRESSION = "self.courseSlots.course -> notEmpty()";
+
+	/**
+	 * Validates the courseNotNull constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_courseNotNull(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(UniversityStudiesPackage.Literals.SEMESTER,
+				 semester,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "courseNotNull",
+				 SEMESTER__COURSE_NOT_NULL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * Validates the enoughPoints constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated not
+	 */
+	public boolean validateSemester_enoughPoints(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (enoughPoints(semester)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -444,7 +482,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "CourseNotNull", getObjectLabel(semester, context) },
+						 new Object[] { "enoughPoints", getObjectLabel(semester, context) },
 						 new Object[] { semester },
 						 context));
 			}
@@ -452,33 +490,16 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		}
 		return true;
 	}
-
-	/**
-	 * Validates the EnoughPoints constraint of '<em>Semester</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSemester_EnoughPoints(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "EnoughPoints", getObjectLabel(semester, context) },
-						 new Object[] { semester },
-						 context));
-			}
-			return false;
+	
+	private boolean enoughPoints(Semester semester) {
+		double result = 0;
+		for(CourseSlot courseSlot : semester.getCourseSlots()) {
+			result += Double.parseDouble((courseSlot.getCourse().getCredits().getLiteral()));
 		}
-		return true;
+		if(result < 30) {
+			return true;
+		}
+		return false;
 	}
 
 	/**

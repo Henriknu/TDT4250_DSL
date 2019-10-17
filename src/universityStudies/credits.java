@@ -26,7 +26,31 @@ public enum Credits implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BASIC(0, "Basic", "7.5");
+	BASIC(0, "Basic", "7.5"), /**
+	 * The '<em><b>Double</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DOUBLE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DOUBLE(0, "Double", "15.0"), /**
+	 * The '<em><b>Full</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FULL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FULL(0, "Full", "30.0"), /**
+	 * The '<em><b>Minor</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MINOR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MINOR(0, "Minor", "5.0");
 
 	/**
 	 * The '<em><b>Basic</b></em>' literal value.
@@ -40,6 +64,39 @@ public enum Credits implements Enumerator {
 	public static final int BASIC_VALUE = 0;
 
 	/**
+	 * The '<em><b>Double</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DOUBLE
+	 * @model name="Double" literal="15.0"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DOUBLE_VALUE = 0;
+
+	/**
+	 * The '<em><b>Full</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FULL
+	 * @model name="Full" literal="30.0"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FULL_VALUE = 0;
+
+	/**
+	 * The '<em><b>Minor</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MINOR
+	 * @model name="Minor" literal="5.0"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MINOR_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Credits</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,6 +105,9 @@ public enum Credits implements Enumerator {
 	private static final Credits[] VALUES_ARRAY =
 		new Credits[] {
 			BASIC,
+			DOUBLE,
+			FULL,
+			MINOR,
 		};
 
 	/**
