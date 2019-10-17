@@ -105,9 +105,9 @@ public class UniversityStudiesValidator extends EObjectValidator {
 			case UniversityStudiesPackage.PROGRAMME_TYPE:
 				return validateProgrammeType((ProgrammeType)value, diagnostics, context);
 			case UniversityStudiesPackage.SEASONS:
-				return validateseasons((seasons)value, diagnostics, context);
+				return validateSeasons((Seasons)value, diagnostics, context);
 			case UniversityStudiesPackage.CREDITS:
-				return validatecredits((credits)value, diagnostics, context);
+				return validateCredits((Credits)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -137,14 +137,14 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * Validates the ValidCode constraint of '<em>Course</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	public boolean validateCourse_ValidCode(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (validateCode(course)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -160,19 +160,34 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		}
 		return true;
 	}
+	
+	private boolean validateCode(Course course) {
+		String code = course.getCode();
+		
+		if(code.length()!=7) {
+			return true;
+		}
+		if(!code.substring(0, 2).matches("[A-Z]{3}")) {
+			return true;
+		}
+		if(!code.substring(3).matches("[0-9]{4}")) {
+			return true;
+		}
+		return false;
+	}
 
 	/**
 	 * Validates the Validcredits constraint of '<em>Course</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	public boolean validateCourse_Validcredits(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		if (validCredits(course)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -185,6 +200,15 @@ public class UniversityStudiesValidator extends EObjectValidator {
 						 context));
 			}
 			return false;
+		}
+		return true;
+	}
+	
+	private boolean validCredits(Course course) {
+		for(Credits credit : Credits.VALUES) {
+			if(credit.getValue() == course.getCredits()) {
+				return false;
+			}	
 		}
 		return true;
 	}
@@ -205,6 +229,9 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(programme, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(programme, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProgramme_validNumberOfSemesters(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_validName(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_departmentNotNull(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_validProgrammeType(programme, diagnostics, context);
 		return result;
 	}
 
@@ -236,9 +263,114 @@ public class UniversityStudiesValidator extends EObjectValidator {
 		return true;
 	}
 	
+	/**
+	 * Validates the validName constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated not
+	 */
+	public boolean validateProgramme_validName(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (validProgrammeName(programme)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validName", getObjectLabel(programme, context) },
+						 new Object[] { programme },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean validProgrammeName(Programme programme) {
+		if(!programme.getName().matches("[A-Z]{2,}")) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Validates the departmentNotNull constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated not
+	 */
+	public boolean validateProgramme_departmentNotNull(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (isDepartmentNull(programme)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "departmentNotNull", getObjectLabel(programme, context) },
+						 new Object[] { programme },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean isDepartmentNull(Programme programme) {
+		if(programme.getDepartment()==null) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Validates the validProgrammeType constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated not
+	 */
+	public boolean validateProgramme_validProgrammeType(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (isValidProgrammeType(programme)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validProgrammeType", getObjectLabel(programme, context) },
+						 new Object[] { programme },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean isValidProgrammeType(Programme programme) {
+		for(ProgrammeType programmeType : ProgrammeType.VALUES) {
+			if (programmeType.getName() == programme.getProgrammeType().getName()){
+				return false;
+			}
+		}
+		return true;
+	}
+
 	private boolean isValidNumberOfSemesters(Programme programme) {
-		System.out.println(programme.getProgrammeType());
-		System.out.println(programme.getNumberOfSemesters());
 		return programme.getProgrammeType().getValue() != programme.getNumberOfSemesters();
 	}
 
@@ -406,7 +538,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateseasons(seasons seasons, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSeasons(Seasons seasons, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -415,7 +547,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatecredits(credits credits, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCredits(Credits credits, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

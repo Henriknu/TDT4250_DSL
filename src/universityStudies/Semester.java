@@ -28,28 +28,28 @@ import org.eclipse.emf.ecore.EObject;
 public interface Semester extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Season</b></em>' attribute.
-	 * The literals are from the enumeration {@link universityStudies.seasons}.
+	 * The literals are from the enumeration {@link universityStudies.Seasons}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Season</em>' attribute.
-	 * @see universityStudies.seasons
-	 * @see #setSeason(seasons)
+	 * @see universityStudies.Seasons
+	 * @see #setSeason(Seasons)
 	 * @see universityStudies.UniversityStudiesPackage#getSemester_Season()
 	 * @model
 	 * @generated
 	 */
-	seasons getSeason();
+	Seasons getSeason();
 
 	/**
 	 * Sets the value of the '{@link universityStudies.Semester#getSeason <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Season</em>' attribute.
-	 * @see universityStudies.seasons
+	 * @see universityStudies.Seasons
 	 * @see #getSeason()
 	 * @generated
 	 */
-	void setSeason(seasons value);
+	void setSeason(Seasons value);
 
 	/**
 	 * Returns the value of the '<em><b>Semester Number</b></em>' attribute.

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see universityStudies.UniversityStudiesPackage#getProgramme()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='validNumberOfSemesters'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='validNumberOfSemesters validName departmentNotNull validProgrammeType'"
  * @generated
  */
 public interface Programme extends EObject {

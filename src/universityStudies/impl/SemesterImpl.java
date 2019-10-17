@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import universityStudies.CourseSlot;
+import universityStudies.Seasons;
 import universityStudies.Semester;
 import universityStudies.UniversityStudiesPackage;
-import universityStudies.seasons;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @generated
 	 * @ordered
 	 */
-	protected static final seasons SEASON_EDEFAULT = seasons.FALL;
+	protected static final Seasons SEASON_EDEFAULT = Seasons.FALL;
 
 	/**
 	 * The cached value of the '{@link #getSeason() <em>Season</em>}' attribute.
@@ -58,7 +58,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @generated
 	 * @ordered
 	 */
-	protected seasons season = SEASON_EDEFAULT;
+	protected Seasons season = SEASON_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSemesterNumber() <em>Semester Number</em>}' attribute.
@@ -135,7 +135,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @generated
 	 */
 	@Override
-	public seasons getSeason() {
+	public Seasons getSeason() {
 		return season;
 	}
 
@@ -145,8 +145,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @generated
 	 */
 	@Override
-	public void setSeason(seasons newSeason) {
-		seasons oldSeason = season;
+	public void setSeason(Seasons newSeason) {
+		Seasons oldSeason = season;
 		season = newSeason == null ? SEASON_EDEFAULT : newSeason;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.SEMESTER__SEASON, oldSeason, season));
@@ -255,7 +255,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case UniversityStudiesPackage.SEMESTER__SEASON:
-				setSeason((seasons)newValue);
+				setSeason((Seasons)newValue);
 				return;
 			case UniversityStudiesPackage.SEMESTER__SEMESTER_NUMBER:
 				setSemesterNumber((Integer)newValue);

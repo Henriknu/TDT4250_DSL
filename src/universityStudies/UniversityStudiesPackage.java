@@ -509,22 +509,22 @@ public interface UniversityStudiesPackage extends EPackage {
 	int PROGRAMME_TYPE = 8;
 
 	/**
-	 * The meta object id for the '{@link universityStudies.seasons <em>seasons</em>}' enum.
+	 * The meta object id for the '{@link universityStudies.Seasons <em>Seasons</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see universityStudies.seasons
-	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getseasons()
+	 * @see universityStudies.Seasons
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getSeasons()
 	 * @generated
 	 */
 	int SEASONS = 9;
 
 
 	/**
-	 * The meta object id for the '{@link universityStudies.credits <em>credits</em>}' enum.
+	 * The meta object id for the '{@link universityStudies.Credits <em>Credits</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see universityStudies.credits
-	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getcredits()
+	 * @see universityStudies.Credits
+	 * @see universityStudies.impl.UniversityStudiesPackageImpl#getCredits()
 	 * @generated
 	 */
 	int CREDITS = 10;
@@ -863,24 +863,24 @@ public interface UniversityStudiesPackage extends EPackage {
 	EEnum getProgrammeType();
 
 	/**
-	 * Returns the meta object for enum '{@link universityStudies.seasons <em>seasons</em>}'.
+	 * Returns the meta object for enum '{@link universityStudies.Seasons <em>Seasons</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>seasons</em>'.
-	 * @see universityStudies.seasons
+	 * @return the meta object for enum '<em>Seasons</em>'.
+	 * @see universityStudies.Seasons
 	 * @generated
 	 */
-	EEnum getseasons();
+	EEnum getSeasons();
 
 	/**
-	 * Returns the meta object for enum '{@link universityStudies.credits <em>credits</em>}'.
+	 * Returns the meta object for enum '{@link universityStudies.Credits <em>Credits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>credits</em>'.
-	 * @see universityStudies.credits
+	 * @return the meta object for enum '<em>Credits</em>'.
+	 * @see universityStudies.Credits
 	 * @generated
 	 */
-	EEnum getcredits();
+	EEnum getCredits();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1172,24 +1172,24 @@ public interface UniversityStudiesPackage extends EPackage {
 		EEnum PROGRAMME_TYPE = eINSTANCE.getProgrammeType();
 
 		/**
-		 * The meta object literal for the '{@link universityStudies.seasons <em>seasons</em>}' enum.
+		 * The meta object literal for the '{@link universityStudies.Seasons <em>Seasons</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see universityStudies.seasons
-		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getseasons()
+		 * @see universityStudies.Seasons
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getSeasons()
 		 * @generated
 		 */
-		EEnum SEASONS = eINSTANCE.getseasons();
+		EEnum SEASONS = eINSTANCE.getSeasons();
 
 		/**
-		 * The meta object literal for the '{@link universityStudies.credits <em>credits</em>}' enum.
+		 * The meta object literal for the '{@link universityStudies.Credits <em>Credits</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see universityStudies.credits
-		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getcredits()
+		 * @see universityStudies.Credits
+		 * @see universityStudies.impl.UniversityStudiesPackageImpl#getCredits()
 		 * @generated
 		 */
-		EEnum CREDITS = eINSTANCE.getcredits();
+		EEnum CREDITS = eINSTANCE.getCredits();
 
 	}
 

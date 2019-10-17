@@ -13,18 +13,17 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import universityStudies.Course;
 import universityStudies.CourseSlot;
+import universityStudies.Credits;
 import universityStudies.Department;
 import universityStudies.ElectiveCourseSlot;
 import universityStudies.MandatoryCourseSlot;
 import universityStudies.Programme;
 import universityStudies.ProgrammeType;
+import universityStudies.Seasons;
 import universityStudies.Semester;
 import universityStudies.Specialization;
 import universityStudies.UniversityStudiesFactory;
 import universityStudies.UniversityStudiesPackage;
-import universityStudies.credits;
-import universityStudies.seasons;
-
 import universityStudies.util.UniversityStudiesValidator;
 
 /**
@@ -498,7 +497,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * @generated
 	 */
 	@Override
-	public EEnum getseasons() {
+	public EEnum getSeasons() {
 		return seasonsEEnum;
 	}
 
@@ -508,7 +507,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 	 * @generated
 	 */
 	@Override
-	public EEnum getcredits() {
+	public EEnum getCredits() {
 		return creditsEEnum;
 	}
 
@@ -638,7 +637,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		initEReference(getSpecialization_Semesters(), this.getSemester(), null, "semesters", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSemester_Season(), this.getseasons(), "season", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_Season(), this.getSeasons(), "season", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSemester_SemesterNumber(), ecorePackage.getEInt(), "semesterNumber", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSemester_CourseSlots(), this.getCourseSlot(), null, "courseSlots", null, 1, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSemester_Name(), ecorePackage.getEString(), "name", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -662,12 +661,12 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		addEEnumLiteral(programmeTypeEEnum, ProgrammeType.INTEGRERT_MASTER);
 		addEEnumLiteral(programmeTypeEEnum, ProgrammeType.ÅRSSTUDIE);
 
-		initEEnum(seasonsEEnum, seasons.class, "seasons");
-		addEEnumLiteral(seasonsEEnum, seasons.FALL);
-		addEEnumLiteral(seasonsEEnum, seasons.SPRING);
+		initEEnum(seasonsEEnum, Seasons.class, "Seasons");
+		addEEnumLiteral(seasonsEEnum, Seasons.FALL);
+		addEEnumLiteral(seasonsEEnum, Seasons.SPRING);
 
-		initEEnum(creditsEEnum, credits.class, "credits");
-		addEEnumLiteral(creditsEEnum, credits.BASIC);
+		initEEnum(creditsEEnum, Credits.class, "Credits");
+		addEEnumLiteral(creditsEEnum, Credits.BASIC);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -701,7 +700,7 @@ public class UniversityStudiesPackageImpl extends EPackageImpl implements Univer
 		  (programmeEClass,
 		   source,
 		   new String[] {
-			   "constraints", "validNumberOfSemesters"
+			   "constraints", "validNumberOfSemesters validName departmentNotNull validProgrammeType"
 		   });
 		addAnnotation
 		  (semesterEClass,

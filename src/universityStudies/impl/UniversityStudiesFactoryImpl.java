@@ -80,9 +80,9 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 			case UniversityStudiesPackage.PROGRAMME_TYPE:
 				return createProgrammeTypeFromString(eDataType, initialValue);
 			case UniversityStudiesPackage.SEASONS:
-				return createseasonsFromString(eDataType, initialValue);
+				return createSeasonsFromString(eDataType, initialValue);
 			case UniversityStudiesPackage.CREDITS:
-				return createcreditsFromString(eDataType, initialValue);
+				return createCreditsFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -99,9 +99,9 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 			case UniversityStudiesPackage.PROGRAMME_TYPE:
 				return convertProgrammeTypeToString(eDataType, instanceValue);
 			case UniversityStudiesPackage.SEASONS:
-				return convertseasonsToString(eDataType, instanceValue);
+				return convertSeasonsToString(eDataType, instanceValue);
 			case UniversityStudiesPackage.CREDITS:
-				return convertcreditsToString(eDataType, instanceValue);
+				return convertCreditsToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -209,8 +209,8 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public seasons createseasonsFromString(EDataType eDataType, String initialValue) {
-		seasons result = seasons.get(initialValue);
+	public Seasons createSeasonsFromString(EDataType eDataType, String initialValue) {
+		Seasons result = Seasons.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -220,7 +220,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertseasonsToString(EDataType eDataType, Object instanceValue) {
+	public String convertSeasonsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -229,8 +229,8 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public credits createcreditsFromString(EDataType eDataType, String initialValue) {
-		credits result = credits.get(initialValue);
+	public Credits createCreditsFromString(EDataType eDataType, String initialValue) {
+		Credits result = Credits.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -240,7 +240,7 @@ public class UniversityStudiesFactoryImpl extends EFactoryImpl implements Univer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertcreditsToString(EDataType eDataType, Object instanceValue) {
+	public String convertCreditsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

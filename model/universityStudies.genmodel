@@ -12,12 +12,12 @@
       <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//ProgrammeType/IntegrertMaster"/>
       <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//ProgrammeType/Årsstudie"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="universityStudies.ecore#//seasons">
-      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//seasons/Fall"/>
-      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//seasons/Spring"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="universityStudies.ecore#//Seasons">
+      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Seasons/Fall"/>
+      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Seasons/Spring"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="universityStudies.ecore#//credits">
-      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//credits/Basic"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="universityStudies.ecore#//Credits">
+      <genEnumLiterals ecoreEnumLiteral="universityStudies.ecore#//Credits/Basic"/>
     </genEnums>
     <genClasses ecoreClass="universityStudies.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute universityStudies.ecore#//Course/name"/>
