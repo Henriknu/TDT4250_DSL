@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import universityStudies.Course;
+import universityStudies.Credits;
 import universityStudies.Programme;
 import universityStudies.UniversityStudiesPackage;
 
@@ -88,7 +89,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float CREDITS_EDEFAULT = 0.0F;
+	protected static final Credits CREDITS_EDEFAULT = Credits.BASIC;
 
 	/**
 	 * The cached value of the '{@link #getCredits() <em>Credits</em>}' attribute.
@@ -98,7 +99,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 * @ordered
 	 */
-	protected float credits = CREDITS_EDEFAULT;
+	protected Credits credits = CREDITS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
@@ -201,7 +202,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public float getCredits() {
+	public Credits getCredits() {
 		return credits;
 	}
 
@@ -211,9 +212,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public void setCredits(float newCredits) {
-		float oldCredits = credits;
-		credits = newCredits;
+	public void setCredits(Credits newCredits) {
+		Credits oldCredits = credits;
+		credits = newCredits == null ? CREDITS_EDEFAULT : newCredits;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UniversityStudiesPackage.COURSE__CREDITS, oldCredits, credits));
 	}
@@ -306,7 +307,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				setCode((String)newValue);
 				return;
 			case UniversityStudiesPackage.COURSE__CREDITS:
-				setCredits((Float)newValue);
+				setCredits((Credits)newValue);
 				return;
 			case UniversityStudiesPackage.COURSE__LEVEL:
 				setLevel((Integer)newValue);

@@ -7,15 +7,15 @@
     xsi:schemaLocation="http://www.example.org/universityStudies universityStudies.ecore">
   <Courses name="Advanced Software Design"
       code="TDT4250"
-      credits="7.5"
+      
       level="3"/>
   <Courses name="Software Architecture"
       code="TDT4240"
-      credits="7.5"
+      
       level="2"/>
   <Courses name="Customer Driven Project"
       code="TDT4290"
-      credits="15.0"
+      
       level="3"/>
   <Courses name="Matematikk 1"
       code="TMA4100"/>
@@ -37,7 +37,6 @@
       code="TDT4175"/>
   <Courses name="Matematikk 4D"
       code="TMA4135"
-      credits="7.5"
       level="3"/>
   <Courses name="Webutvikling"
       code="IT2810"/>
@@ -47,23 +46,23 @@
       code="TDT4137"/>
   <Courses name="Medisin for realfags- og teknologistudenter"
       code="MFEL3010"
-      credits="7.5"
+      
       level="3"/>
   <Courses name="Bioteknologi og teknikk"
       code="FI3107"
-      credits="7.5"
+      
       level="3"/>
   <Courses name="Programmeringslab for dateteknologi"
       code="TDT4112"
-      credits="7.5"
+      
       level="1"/>
   <Courses name="Krets- og digitalteknikk"
       code="TFE4101"
-      credits="7.5"
+      
       level="1"/>
   <Courses name="Matematikk 3"
       code="TMA4115"
-      credits="7.5"
+      
       level="1"/>
   <Programmes
       numberOfSemesters="10"

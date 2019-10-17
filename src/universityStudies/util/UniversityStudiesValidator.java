@@ -162,15 +162,8 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	}
 	
 	private boolean validateCode(Course course) {
-		String code = course.getCode();
 		
-		if(code.length()!=7) {
-			return true;
-		}
-		if(!code.substring(0, 2).matches("[A-Z]{3}")) {
-			return true;
-		}
-		if(!code.substring(3).matches("[0-9]{4}")) {
+		if(!course.getCode().matches("^[A-Z]{1,4}[0-9]{3,5}$")) {
 			return true;
 		}
 		return false;
@@ -206,7 +199,7 @@ public class UniversityStudiesValidator extends EObjectValidator {
 	
 	private boolean validCredits(Course course) {
 		for(Credits credit : Credits.VALUES) {
-			if(credit.getValue() == course.getCredits()) {
+			if(credit.getValue() == course.getCredits().getValue()) {
 				return false;
 			}	
 		}

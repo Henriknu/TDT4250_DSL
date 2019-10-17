@@ -73,25 +73,28 @@ public interface Course extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
+	 * The literals are from the enumeration {@link universityStudies.Credits}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Credits</em>' attribute.
-	 * @see #setCredits(float)
+	 * @see universityStudies.Credits
+	 * @see #setCredits(Credits)
 	 * @see universityStudies.UniversityStudiesPackage#getCourse_Credits()
 	 * @model required="true"
 	 * @generated
 	 */
-	float getCredits();
+	Credits getCredits();
 
 	/**
 	 * Sets the value of the '{@link universityStudies.Course#getCredits <em>Credits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Credits</em>' attribute.
+	 * @see universityStudies.Credits
 	 * @see #getCredits()
 	 * @generated
 	 */
-	void setCredits(float value);
+	void setCredits(Credits value);
 
 	/**
 	 * Returns the value of the '<em><b>Level</b></em>' attribute.

@@ -12,7 +12,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        eType="#//Credits"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="programmes" upperBound="-1"
         eType="#//Programme" containment="true"/>
@@ -74,5 +74,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Credits">
     <eLiterals name="Basic" literal="7.5"/>
+    <eLiterals name="Double" literal="15.0"/>
+    <eLiterals name="Full" literal="30.0"/>
+    <eLiterals name="Minor" literal="5.0"/>
   </eClassifiers>
 </ecore:EPackage>
