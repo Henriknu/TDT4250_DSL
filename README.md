@@ -8,54 +8,56 @@ Group: Hallvard Echtermeyer, Henrik Knudsen
 
 ### Model
 
---> UniversityStudies.ecore:
+### UniversityStudies.ecore:
 
   - Ecore model for the assignment.
   
---> UniversityStudies.genmodel
+### UniversityStudies.genmodel
 
   - Genmodel for the assignment, generating code based on ecore model.
   
 ### src
   - Contains interfaces representing the classes, given by the ecore model.
   
---> Utils
+### Utils
 
   - Adapter factory and validator, used for the constraints of the model
   
---> Impls
+### Impls
   
   - Concrete implementations of the interfaces in the src folder.
 
 ## Content
 
---> Studyplan
+### Department
 
-  - Represents what is shown to a student when visiting studentWeb. Includes a Programme, potential specializations, semesters and results from exams.
+  - Represents a university department. Container for a set of courses and programmes. Main entity in model.
   
---> Programme
+### Programme
 
-  - Represents a study programme, ex. MTDT. Incudes a set of allowed courses and potential specializations. The programme also has a name, a type (2 year master, 5 year master, bachelor, one-year-study etc) and a year field, signifying what the expected duration of the programme will be.
+  - Represents a study programme, ex. MTDT. Incudes a set of semesters and potential specializations. The programme also has a name, a type (2 year master, 5 year master, bachelor, one-year-study etc) and a numberOfSemesters field, signifying what the expected duration of the programme will be. The programme is containted by the department, and has a container reference to it.
   
---> Specialization
+### Specialization
 
-  - Represents a specialization a student can take during their Programme. A Programme might have no, single or multiple levels of specializations (ex. in MTDT you can choose to specialize in only AI, or choose softwaresystems in the 3rd year and then software development in 4th year). A specialization might unlock new courses, not avaible before, while also unlockig further specializations.
+  - Represents a specialization a student can take during their Programme. A Programme might have no, single or multiple levels of specializations (ex. in MTDT you can choose to specialize in only AI, or choose softwaresystems in the 3rd year and then software development in 4th year). A specialization has a set of semesters related to it, and can potentially have further specializations.
   
---> Course
+### Course
 
-  - Represents a generic course taken at NTNU. Each course has a prefix (ex. TDT), a code (ex. 4250) and a name (ex. Advanced software design). Each course awards a certains set of credits on completion (between 5 and 60 points), and is potentially connected to one or more Programmes (students of that programme are then allowed to take the course).
+  - Represents a generic course taken at NTNU. Each course has a code (ex. TDT4250) and a name (ex. Advanced software design). Each course awards a certains set of credits on completion (between 5 and 30 points), and is potentially connected to one or more Semesters (students of that programme are then allowed to take the course).
   
---> Semester
+### Semester
 
-  - Represents a student's semester, containing what courses the student took. Each semester has a prefix (ex. H for "Høst") and a year (ex. 2019). 
-  
---> Result
+  - Represents a semester, part of a programme or specialization. Contains a set of course slots, which can be manditory or elective. Has a constraint that each semesters selected courses has to sum up to 30 or more credits.
 
-  - Represents a single result, given for a course at the end of a semester. Contains information about grade, date, candidate Nr. Also has pointers to the relevant course, studyplan and semester. 
-  
-  
-  
+### CourseSlot
 
-  
-  
+- Superclass for ManditoryCourseSlot and ElectiveCourseSlot. Contains a course, selected for the slot.
 
+### ElectiveCourseSlot
+
+- Courseslot, where the student would be able to select a course among a set of courses. Contains the list of potential coruses.
+
+### ManditoryCourseSlot
+
+- CourseSlot, with only one allowed (manditory) course.
+  
