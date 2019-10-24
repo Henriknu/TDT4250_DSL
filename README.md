@@ -1,5 +1,6 @@
 # TDT4250_DSL
-DSL transformation - Assignment 3
+DSL transformation - Assignment 3.
+
 Created by Hallvard Echtermeyer and Henrik Knudsen
 
 ## Modelling project
