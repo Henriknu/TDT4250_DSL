@@ -1,0 +1,66 @@
+[comment encoding = UTF-8 /]
+[module studiesToHtml('http://www.example.org/universityStudies', 'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[template public generateElement(department : Department)]
+[comment @main /]
+[file ('Work'.concat('.html'), false, 'UTF-8')]
+<!DOCTYPE html>
+    
+<html>
+<head>
+    <title>Studyprogram</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h1>Studyprogram</h1>
+[for (programmes : Programme | department.Programmes)]
+<ul>
+    <li><a href="[programmes.name.concat('.html')/]">[programmes.programmeType/] degree</a></li>
+</ul>
+[/for]
+</body>
+</html>
+[/file]
+[comment loop through programs, in case several exists in the model, and generate each/]
+[for (Programmes : Programme | department.Programmes)]
+    [generate(Programmes)/]
+[/for]
+[/template]
+
+
+
+
+[template public generate(programme : Programme)]
+    [comment Generates a new html page for this program/]
+    [file (programme.name.concat('.html'), false, 'UTF-8')]
+    [comment set program name to headline/]
+    <h1>[programme.name/]</h1>
+    [comment check if program has semesters that are not part of specialisation. if yeas genereate the semesters/]
+    [if (programme.semesters.oclAsSet()->size() > 0)]
+        <ul>
+        [for (semester : Semester | programme.semesters)]
+            <li>[generate(semester)/]</li>
+        [/for]
+        </ul>
+    [/if]
+    [/file]
+[/template]
+
+[template public generate(semester : Semester)]
+    [comment set 'Semester semesterNumber' to headline/]
+    <h3>Semester [semester.semesterNumber/]</h3>
+    [comment create a list of course slots, and generate all courseSlots for this semester/]
+    <ul>
+    [for (courseSlot : CourseSlot | semester.courseSlots)]
+        <li>[generate(courseSlot)/]</li>
+    [/for]
+    </ul>
+[/template]
+
+[template public generate(courseSlot : CourseSlot)]
+    [comment compulsoryCourseSlot will simply list it's one course/]
+    
+        Compulsory course:
+        [courseSlot.course.code/] [courseSlot.course.name/] | Level: [courseSlot.course.level/] | credits: [courseSlot.course.credits/]
+  
+[/template]
