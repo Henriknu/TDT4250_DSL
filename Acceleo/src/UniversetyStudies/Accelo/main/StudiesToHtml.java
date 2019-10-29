@@ -43,7 +43,7 @@ public class StudiesToHtml extends AbstractAcceleoGenerator {
      * @generated
      */
     public static final String[] TEMPLATE_NAMES = { "generateElement" };
-    
+    //halech
     /**
      * The list of properties files from the launch parameters (Launch configuration).
      *

@@ -42,7 +42,20 @@
             <li>[generate(semester)/]</li>
         [/for]
         </ul>
+
+
     [/if]
+
+    [comment check if program has specializations. If yes, generate all specialisations/]
+    [if (programme.specializations.oclAsSet()->size() > 0)]
+        <ul>
+        [for (Specializations : Specialization | programme.specializations)]
+            <li>[generate(Specializations)/]</li>
+        [/for]
+        </ul>
+    [/if]
+
+
     [/file]
 [/template]
 
@@ -57,10 +70,36 @@
     </ul>
 [/template]
 
+[template public generate(specialisation : Specialization)]
+    [comment set specialisation name as headline/]
+    <h2>Specialisation [specialisation.name/]</h2>
+
+    [comment if specialisation has semesters before branching out to sub-specialisations, generate semesters/]
+    [if (specialisation.semesters.oclAsSet()->size() > 0)]
+        <ul>
+        [for (semesters : Semester | specialisation.semesters)]
+            <li>[generate(semesters)/]</li>
+        [/for]
+        </ul>
+    [/if]
+    
+    [comment if specialisation has subspecialisations, call recursively on generate(specialisation) to generate subspecialisations/]
+    [if (specialisation.furtherSpecializations.oclAsSet()->size() > 0)]
+        <ul>
+        [for (furtherSpecializations : Specialization | specialisation.furtherSpecializations)]
+            <li>[generate(furtherSpecializations)/]</li>
+        [/for]
+        </ul>
+    [/if]
+[/template]
+
+
 [template public generate(courseSlot : CourseSlot)]
     [comment compulsoryCourseSlot will simply list it's one course/]
     
         Compulsory course:
         [courseSlot.course.code/] [courseSlot.course.name/] | Level: [courseSlot.course.level/] | credits: [courseSlot.course.credits/]
-  
+ 		
 [/template]
+
+

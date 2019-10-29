@@ -3,8 +3,8 @@
 <!-- Place this file in the target project and call it with "External Tools > Run As > Ant Build" -->
 <!-- You have to change the MODEL and the TARGET values -->
 
-<project basedir="." default="studiesToHtmlSample" name="UniversetyStudies.AcceloSample">
-	<import file="../../UniversetyStudies.Accelo/tasks/studiesToHtml.xml"/>
+<project basedir="." default="studiesToHtmlSample" name="AcceleoSample">
+	<import file="../../Acceleo/tasks/studiesToHtml.xml"/>
 
     <!-- Change the values of MODEL and TARGET to point to your model and output folder -->
 	<property name="MODEL" value="${basedir}/model/file.xmi"/>
